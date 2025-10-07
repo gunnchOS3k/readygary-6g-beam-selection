@@ -342,7 +342,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **Advancing 6G Communications Through Hybrid Intelligence**
 
-[📄 Paper PDF](https://github.com/gunnchOS3k/readygary-6g-beam-selection/actions) • [🧪 Experiments](https://github.com/gunnchOS3k/readygary-6g-beam-selection/tree/main/sim) • [💬 Discussions](https://github.com/gunnchOS3k/readygary-6g-beam-selection/discussions)
-
 </div>
-EOF'
