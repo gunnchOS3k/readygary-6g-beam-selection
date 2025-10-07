@@ -1,0 +1,9 @@
+build/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.pdf
+__pycache__/
+GIT'
