@@ -1,8 +1,9 @@
 cff-version: 1.2.0
-title: ReadyGary — 6G Beam Selection
+title: "gunnchOS3k MLV 6G Research Artifact"
+message: "If you use this software, please cite it."
 authors:
   - family-names: Gunn
     given-names: Edmund
-date-released: 2025-11-01
-message: "If you use this work, please cite this repository."
-CFF'
+    name-particle: Jr.
+license: MIT
+repository-code: 'https://github.com/gunnchOS3k/readygary-6g-beam-selection'
