@@ -1,10 +1,9 @@
 stateDiagram-v2
-  [*] --> Start
-  channel
-  Validated --> candidates
-  Validated --> oracle
-  Validated --> predict
-  Validated --> top-k
-  Validated --> loss
-  Validated --> latency
-  Exported --> [*]
+  [*] --> ChannelInput
+  ChannelInput --> CandidatesGenerated
+  CandidatesGenerated --> OracleEvaluated
+  OracleEvaluated --> ModelPredicts
+  ModelPredicts --> TopKCompared
+  TopKCompared --> LossesComputed
+  LossesComputed --> ReportGenerated
+  ReportGenerated --> [*]
