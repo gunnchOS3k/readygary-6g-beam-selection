@@ -1,10 +1,12 @@
 ..                                                                       [100%]
 2 passed in 0.01s
 {
-  "top_k_accuracy": 1.0,
+  "top1_accuracy": 0.0,
+  "top3_accuracy": 1.0,
+  "top5_accuracy": 0.6,
   "db_loss_vs_oracle": 0.2461,
   "spectral_efficiency_loss": 0.0246,
   "inference_latency_ms": 0.0003,
   "note": "toy synthetic channel \u2014 not calibrated mmWave measurements"
 }
-Wrote /Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/results/e2e/benchmark_summary.md
+Wrote /Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/results/e2e/benchmark_summary.md, /Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/results/e2e/beam_selection_research_card.md
