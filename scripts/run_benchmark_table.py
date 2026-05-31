@@ -63,8 +63,10 @@ def main() -> int:
 
     result = run_toy(seed=args.seed)
     print(json.dumps(result, indent=2))
-    md = ROOT / "results" / "benchmark_summary.md"
-    md.parent.mkdir(parents=True, exist_ok=True)
+    e2e_dir = ROOT / "results" / "e2e"
+    e2e_dir.mkdir(parents=True, exist_ok=True)
+    md = e2e_dir / "benchmark_summary.md"
+    (ROOT / "results").mkdir(parents=True, exist_ok=True)
     md.write_text(
         "# Benchmark Summary (toy)\n\n"
         + "\n".join(f"- **{k}**: {v}" for k, v in result.items())
