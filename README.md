@@ -1,4 +1,16 @@
 # 📡 ReadyGary — 6G Beam Selection
+## End-to-End Research Artifact
+
+| Item | Detail |
+|------|--------|
+| **Runs today** | Research prototype with synthetic toy demo |
+| **Demo** | `make e2e` |
+| **Data** | Synthetic only — no private IQ or PII |
+| **Extend** | See [EXTERNAL_RESEARCHER_QUICKSTART.md](docs/EXTERNAL_RESEARCHER_QUICKSTART.md) |
+| **Limits** | Not operational 6G; not Oulu affiliation; not carrier-grade |
+| **Readiness** | [END_TO_END_READINESS.md](docs/END_TO_END_READINESS.md) |
+| **Proof** | [E2E_RUN_RECORD.md](reproducibility/E2E_RUN_RECORD.md) |
+| **Artifacts** | [results/e2e/](results/e2e/) |
 
 > **Edge-efficient beam selection for 5G/6G mmWave using hybrid ML + physics baselines**
 
@@ -89,24 +101,24 @@ graph TB
         C[gNB #1] --> B
         D[gNB #2] --> B
     end
-    
+
     subgraph "🧠 ReadyGary Engine"
         B --> E[Feature Builder]
         E --> F[Hybrid Model]
         F --> G[Beam Selector]
         G --> H[Top-k Beams]
     end
-    
+
     subgraph "⚡ Edge Runtime"
         I[ONNX/TensorRT] --> J[<1ms Inference]
         K[gRPC/REST API] --> L[Real-time Service]
     end
-    
+
     subgraph "☁️ Cloud Infrastructure"
         M[Model Registry] --> N[Version Control]
         O[R2/Blob Storage] --> P[Dataset Management]
     end
-    
+
     F --> I
     H --> C
     H --> D

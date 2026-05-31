@@ -1,0 +1,10 @@
+..                                                                       [100%]
+2 passed in 0.01s
+{
+  "top_k_accuracy": 1.0,
+  "db_loss_vs_oracle": 0.2461,
+  "spectral_efficiency_loss": 0.0246,
+  "inference_latency_ms": 0.0004,
+  "note": "toy synthetic channel \u2014 not calibrated mmWave measurements"
+}
+Wrote /Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/results/e2e/benchmark_summary.md

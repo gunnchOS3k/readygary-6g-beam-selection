@@ -1,0 +1,8 @@
+name: experiment
+description: experiment
+labels: ['track:6g-research']
+body:
+  - type: textarea
+    id: body
+    attributes:
+      label: Details

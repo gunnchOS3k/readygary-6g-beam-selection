@@ -1,0 +1,8 @@
+name: documentation
+description: documentation
+labels: ['track:6g-research']
+body:
+  - type: textarea
+    id: body
+    attributes:
+      label: Details

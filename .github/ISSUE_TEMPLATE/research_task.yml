@@ -1,0 +1,8 @@
+name: research_task
+description: research_task
+labels: ['track:6g-research']
+body:
+  - type: textarea
+    id: body
+    attributes:
+      label: Details
