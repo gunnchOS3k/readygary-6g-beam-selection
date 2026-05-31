@@ -1,0 +1,10 @@
+flowchart TB
+  subgraph users [Users]
+    SUP[Supervisor]
+    RES[Researcher]
+    STU[Student]
+  end
+  SYS[readygary-6g-beam-selection]
+  TWIN[7gc-digital-twin]
+  users --> SYS
+  SYS --> TWIN

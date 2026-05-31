@@ -1,0 +1,10 @@
+stateDiagram-v2
+  [*] --> Start
+  channel
+  Validated --> candidates
+  Validated --> oracle
+  Validated --> predict
+  Validated --> top-k
+  Validated --> loss
+  Validated --> latency
+  Exported --> [*]
