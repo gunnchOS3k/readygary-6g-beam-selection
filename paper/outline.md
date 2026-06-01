@@ -4,4 +4,4 @@
 ReadyGary: Edge-Efficient Beam Selection for mmWave 6G under Mobility and Blockage
 
 ## Contribution
-Open reproducible artifact for community-scale 6G research.
+beam benchmark scaffold: top-k, dB loss, SE loss, latency vs oracle on toy channel

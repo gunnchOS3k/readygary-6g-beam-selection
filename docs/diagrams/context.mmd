@@ -1,10 +1,14 @@
 flowchart TB
-  subgraph users [Users]
-    SUP[Supervisor]
-    RES[Researcher]
-    STU[Student]
+  RES[Researcher / radio supervisor]
+  STU[WAIKE apprentice]
+  subgraph SYS[readygary-6g-beam-selection]
+    SIM[sim/metrics.py]
+    BENCH[scripts/run_benchmark_table.py]
   end
-  SYS[readygary-6g-beam-selection]
-  TWIN[7gc-digital-twin]
-  users --> SYS
-  SYS --> TWIN
+  TOY[toy_beam_gains synthetic channel]
+  ORA[oracle_beam_index]
+  RES --> BENCH
+  TOY --> SIM
+  BENCH --> SIM
+  SIM --> ORA
+  SIM --> OUT[results/e2e/benchmark_summary.md]

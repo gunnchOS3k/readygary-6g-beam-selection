@@ -1,8 +1,8 @@
 sequenceDiagram
-  participant U as User
-  participant CLI as Demo CLI
-  participant Core as Core modules
-  U->>CLI: run demo command
-  CLI->>Core: load synthetic data
-  Core-->>CLI: metrics/output
-  CLI-->>U: stdout + results file
+  participant U as Researcher
+  participant R as run_benchmark_table.py
+  participant M as sim.metrics
+  U->>R: --toy
+  R->>M: top_k_accuracy db_loss SE loss latency
+  M-->>R: metric dict
+  R->>R: results/e2e/benchmark_summary.md
