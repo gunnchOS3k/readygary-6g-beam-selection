@@ -1,0 +1,11 @@
+site_id: ghana
+mobility_case: pedestrian_stub
+blockage_case: urban_nlos_stub
+latency_sensitivity: medium
+device_class: handset_stub
+radio_environment_assumption: configurable_channel_stub
+evidence_needed:
+- realistic_channel_dataset
+- hardware_latency
+link_7gc_site_profile: 7gc-digital-twin/configs/site_profiles/ghana.yaml
+evidence_status: smoke_test_only
