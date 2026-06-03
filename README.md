@@ -508,3 +508,14 @@ MIT License - see [LICENSE](LICENSE) for details.
 **Advancing 6G Communications Through Hybrid Intelligence**
 
 </div>
+
+## Industry / research-grade tooling alignment
+
+| Tool / ecosystem | Why it matters | Adapter | Runs now? | Access? |
+|------------------|----------------|---------|-----------|---------|
+| See matrix | Evidence upgrade path | `industry_research_stack/` | Stub exports | Optional |
+
+**Commands:** `make e2e` (includes tool export stubs) · `python3 scripts/run_all_tool_exports.py`
+
+**Notice:** Aligned with public research ecosystems — [non-affiliation](industry_research_stack/NON_AFFILIATION_NOTICE.md). Smoke stubs only unless documented otherwise.
+
