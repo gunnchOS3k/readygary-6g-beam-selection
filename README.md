@@ -519,3 +519,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 **Notice:** Aligned with public research ecosystems — [non-affiliation](industry_research_stack/NON_AFFILIATION_NOTICE.md). Smoke stubs only unless documented otherwise.
 
+## Oulu WCE portfolio alignment
+
+See [docs/OULU_WCE_ALIGNMENT.md](docs/OULU_WCE_ALIGNMENT.md).
