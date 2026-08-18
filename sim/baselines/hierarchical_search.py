@@ -167,4 +167,3 @@ def compare_baselines():
 
 if __name__ == "__main__":
     compare_baselines()
-EOF'

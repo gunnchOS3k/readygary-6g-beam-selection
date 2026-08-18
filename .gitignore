@@ -6,4 +6,5 @@ build/
 *.blg
 *.pdf
 __pycache__/
-GIT'
+.venv/
+venv/
