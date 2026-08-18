@@ -1,0 +1,914 @@
+{
+  "experiment_id": "rq2_beam_selection_fr2_additive",
+  "evidence_class": "SYNTHETIC_SIM",
+  "latency_class": "HOST_PROCESS_TIMING",
+  "sub_ms_inference_proven": false,
+  "sub_ms_inference_target": true,
+  "carrier_frequency_hz": 28000000000,
+  "band": "FR2",
+  "never": "Sub-6",
+  "held_out_generated": true,
+  "channel_availability": {
+    "synthetic": {
+      "available": true,
+      "reason": "open numpy path",
+      "evidence_class": "SYNTHETIC_SIM"
+    },
+    "tdl_a": {
+      "available": true,
+      "reason": "parametric 3GPP TDL/CDL structure; open numpy; not OTA",
+      "evidence_class": "SYNTHETIC_SIM"
+    },
+    "tdl_c": {
+      "available": true,
+      "reason": "parametric 3GPP TDL/CDL structure; open numpy; not OTA",
+      "evidence_class": "SYNTHETIC_SIM"
+    },
+    "cdl_a": {
+      "available": true,
+      "reason": "parametric 3GPP TDL/CDL structure; open numpy; not OTA",
+      "evidence_class": "SYNTHETIC_SIM"
+    },
+    "sionna_rt": {
+      "available": false,
+      "reason": "BLOCKED_OPTIONAL_BACKEND: sionna not importable (ModuleNotFoundError)",
+      "evidence_class": "SYNTHETIC_SIM"
+    },
+    "aodt": {
+      "available": false,
+      "reason": "BLOCKED_OPTIONAL_BACKEND: AODT/Aerial not importable (ModuleNotFoundError)",
+      "evidence_class": "SYNTHETIC_SIM"
+    }
+  },
+  "channel_oracle": {
+    "synthetic": {
+      "available": true,
+      "reason": "open numpy path",
+      "evidence_class": "SYNTHETIC_SIM",
+      "oracle_mean_snr_linear": {
+        "n": 5,
+        "mean": 2.0487428718234932,
+        "ci_low": 1.3689836589220232,
+        "ci_high": 2.7285020847249633,
+        "sd": 0.5475460404825069
+      },
+      "ota": false
+    },
+    "tdl_a": {
+      "available": true,
+      "reason": "parametric 3GPP TDL/CDL structure; open numpy; not OTA",
+      "evidence_class": "SYNTHETIC_SIM",
+      "oracle_mean_snr_linear": {
+        "n": 5,
+        "mean": 2.0819447681780954,
+        "ci_low": 1.8892851357757439,
+        "ci_high": 2.2746044005804467,
+        "sd": 0.15518733233853707
+      },
+      "ota": false
+    },
+    "tdl_c": {
+      "available": true,
+      "reason": "parametric 3GPP TDL/CDL structure; open numpy; not OTA",
+      "evidence_class": "SYNTHETIC_SIM",
+      "oracle_mean_snr_linear": {
+        "n": 5,
+        "mean": 3.2609319486918364,
+        "ci_low": 2.7963859104979103,
+        "ci_high": 3.7254779868857626,
+        "sd": 0.37419182999993966
+      },
+      "ota": false
+    },
+    "cdl_a": {
+      "available": true,
+      "reason": "parametric 3GPP TDL/CDL structure; open numpy; not OTA",
+      "evidence_class": "SYNTHETIC_SIM",
+      "oracle_mean_snr_linear": {
+        "n": 5,
+        "mean": 1.967510679840958,
+        "ci_low": 1.5466628286718498,
+        "ci_high": 2.3883585310100663,
+        "sd": 0.3389929407056341
+      },
+      "ota": false
+    },
+    "sionna_rt": {
+      "available": false,
+      "reason": "BLOCKED_OPTIONAL_BACKEND: sionna not importable (ModuleNotFoundError)",
+      "evidence_class": "SYNTHETIC_SIM",
+      "oracle_mean_snr_linear": {
+        "n": 5,
+        "mean": 2.0487428718234932,
+        "ci_low": 1.3689836589220232,
+        "ci_high": 2.7285020847249633,
+        "sd": 0.5475460404825069
+      },
+      "ota": false
+    },
+    "aodt": {
+      "available": false,
+      "reason": "BLOCKED_OPTIONAL_BACKEND: AODT/Aerial not importable (ModuleNotFoundError)",
+      "evidence_class": "SYNTHETIC_SIM",
+      "oracle_mean_snr_linear": {
+        "n": 5,
+        "mean": 2.0487428718234932,
+        "ci_low": 1.3689836589220232,
+        "ci_high": 2.7285020847249633,
+        "sd": 0.5475460404825069
+      },
+      "ota": false
+    }
+  },
+  "gnn_multi_bs": {
+    "independent_multi_bs": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 1.5854706415491537,
+        "ci_low": 1.5117079178608497,
+        "ci_high": 1.6592333652374578,
+        "sd": 0.05941587333306261
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": 1.8208049157443766,
+        "ci_low": 1.649545586634389,
+        "ci_high": 1.9920642448543642,
+        "sd": 0.13794938820999303
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 14.325,
+        "ci_low": 13.80334461567046,
+        "ci_high": 14.846655384329539,
+        "sd": 0.42019340784929027
+      },
+      "n_bs": {
+        "n": 5,
+        "mean": 3.0,
+        "ci_low": 3.0,
+        "ci_high": 3.0,
+        "sd": 0.0
+      }
+    },
+    "gnn_multi_bs": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 1.6001301805025243,
+        "ci_low": 1.5250669900445273,
+        "ci_high": 1.6751933709605213,
+        "sd": 0.06046339930550969
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": 1.86885924621638,
+        "ci_low": 1.716785038398292,
+        "ci_high": 2.0209334540344677,
+        "sd": 0.12249577316486827
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 14.4,
+        "ci_low": 13.869192068634991,
+        "ci_high": 14.93080793136501,
+        "sd": 0.42756578441217674
+      },
+      "n_bs": {
+        "n": 5,
+        "mean": 3.0,
+        "ci_low": 3.0,
+        "ci_high": 3.0,
+        "sd": 0.0
+      }
+    },
+    "gnn_no_message": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 1.5854706415491537,
+        "ci_low": 1.5117079178608497,
+        "ci_high": 1.6592333652374578,
+        "sd": 0.05941587333306261
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": 1.8208049157443766,
+        "ci_low": 1.649545586634389,
+        "ci_high": 1.9920642448543642,
+        "sd": 0.13794938820999303
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 14.325,
+        "ci_low": 13.80334461567046,
+        "ci_high": 14.846655384329539,
+        "sd": 0.42019340784929027
+      },
+      "n_bs": {
+        "n": 5,
+        "mean": 3.0,
+        "ci_low": 3.0,
+        "ci_high": 3.0,
+        "sd": 0.0
+      }
+    }
+  },
+  "adaptive_tracking": {
+    "adaptive_static": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 0.7856803293626642,
+        "ci_low": 0.47098621237876326,
+        "ci_high": 1.100374446346565,
+        "sd": 0.2534861086798536
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": -3.215610444551544,
+        "ci_low": -5.7710284117963315,
+        "ci_high": -0.6601924773067567,
+        "sd": 2.0583891519033415
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_cost": {
+        "n": 5,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "probes_used": {
+        "n": 5,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "probe_budget": {
+        "n": 5,
+        "mean": 2.0,
+        "ci_low": 2.0,
+        "ci_high": 2.0,
+        "sd": 0.0
+      }
+    },
+    "adaptive_heuristic": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 0.603019964366354,
+        "ci_low": 0.4378313201932252,
+        "ci_high": 0.7682086085394828,
+        "sd": 0.13305945154255783
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": -6.1179740918336325,
+        "ci_low": -8.97997250892933,
+        "ci_high": -3.2559756747379347,
+        "sd": 2.3053397017733346
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 3.275,
+        "ci_low": 2.5950216474033896,
+        "ci_high": 3.9549783525966102,
+        "sd": 0.5477225575051661
+      },
+      "switch_cost": {
+        "n": 5,
+        "mean": 0.81875,
+        "ci_low": 0.6487554118508474,
+        "ci_high": 0.9887445881491526,
+        "sd": 0.13693063937629152
+      },
+      "probes_used": {
+        "n": 5,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "probe_budget": {
+        "n": 5,
+        "mean": 2.0,
+        "ci_low": 2.0,
+        "ci_high": 2.0,
+        "sd": 0.0
+      }
+    },
+    "adaptive_opt": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 2.507514085173896,
+        "ci_low": 2.3376798846549725,
+        "ci_high": 2.6773482856928195,
+        "sd": 0.13680144714144202
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": 3.7220665723769946,
+        "ci_low": 3.4646908289295713,
+        "ci_high": 3.979442315824418,
+        "sd": 0.20731615926080138
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 4.8,
+        "ci_low": 4.5918,
+        "ci_high": 5.0081999999999995,
+        "sd": 0.16770509831248423
+      },
+      "switch_cost": {
+        "n": 5,
+        "mean": 1.2,
+        "ci_low": 1.14795,
+        "ci_high": 1.2520499999999999,
+        "sd": 0.04192627457812106
+      },
+      "probes_used": {
+        "n": 5,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "probe_budget": {
+        "n": 5,
+        "mean": 2.0,
+        "ci_low": 2.0,
+        "ci_high": 2.0,
+        "sd": 0.0
+      }
+    },
+    "adaptive_bandit": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 0.05121725165670352,
+        "ci_low": 0.0009737460234408093,
+        "ci_high": 0.10146075728996623,
+        "sd": 0.04047114338035629
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": -22.16647280005853,
+        "ci_low": -26.637010389640846,
+        "ci_high": -17.69593521047621,
+        "sd": 3.6010179921736736
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 0.75,
+        "ci_low": 0.20134482596078618,
+        "ci_high": 1.2986551740392138,
+        "sd": 0.4419417382415922
+      },
+      "switch_cost": {
+        "n": 5,
+        "mean": 0.1875,
+        "ci_low": 0.050336206490196544,
+        "ci_high": 0.32466379350980346,
+        "sd": 0.11048543456039805
+      },
+      "probes_used": {
+        "n": 5,
+        "mean": 0.8,
+        "ci_low": 0.35292177418263826,
+        "ci_high": 1.2470782258173618,
+        "sd": 0.3601215072721983
+      },
+      "probe_budget": {
+        "n": 5,
+        "mean": 2.0,
+        "ci_low": 2.0,
+        "ci_high": 2.0,
+        "sd": 0.0
+      }
+    },
+    "adaptive_constrained_rl": {
+      "mean_snr_linear": {
+        "n": 5,
+        "mean": 0.21923291183621263,
+        "ci_low": 0.11652117119114659,
+        "ci_high": 0.3219446524812787,
+        "sd": 0.08273430625709502
+      },
+      "mean_snr_db": {
+        "n": 5,
+        "mean": -10.001822642574979,
+        "ci_low": -11.663316330505625,
+        "ci_high": -8.340328954644333,
+        "sd": 1.3383331521612916
+      },
+      "n_beam_switches": {
+        "n": 5,
+        "mean": 2.275,
+        "ci_low": 1.680018941477966,
+        "ci_high": 2.8699810585220336,
+        "sd": 0.47925723781702034
+      },
+      "switch_cost": {
+        "n": 5,
+        "mean": 0.56875,
+        "ci_low": 0.4200047353694915,
+        "ci_high": 0.7174952646305084,
+        "sd": 0.11981430945425509
+      },
+      "probes_used": {
+        "n": 5,
+        "mean": 13.0,
+        "ci_low": 13.0,
+        "ci_high": 13.0,
+        "sd": 0.0
+      },
+      "probe_budget": {
+        "n": 5,
+        "mean": 2.0,
+        "ci_low": 2.0,
+        "ci_high": 2.0,
+        "sd": 0.0
+      }
+    }
+  },
+  "probe_budget_ablation": {
+    "1": {
+      "adaptive_bandit": {
+        "n": 5,
+        "mean": -21.53639271843048,
+        "ci_low": -26.469763964991873,
+        "ci_high": -16.603021471869088,
+        "sd": 3.9738304991189306
+      },
+      "adaptive_constrained_rl": {
+        "n": 5,
+        "mean": -12.197408465058752,
+        "ci_low": -14.95784069954556,
+        "ci_high": -9.436976230571943,
+        "sd": 2.2235281425050943
+      }
+    },
+    "4": {
+      "adaptive_bandit": {
+        "n": 5,
+        "mean": -22.438384777525947,
+        "ci_low": -25.626901921648837,
+        "ci_high": -19.249867633403056,
+        "sd": 2.568350533747218
+      },
+      "adaptive_constrained_rl": {
+        "n": 5,
+        "mean": -6.156828832987629,
+        "ci_low": -8.076565217235164,
+        "ci_high": -4.2370924487400945,
+        "sd": 1.546347641951421
+      }
+    }
+  },
+  "twin_vs_info": {
+    "family": "in_distribution",
+    "ablation": "full",
+    "seeds": [
+      200,
+      201,
+      202,
+      203,
+      204
+    ],
+    "n_episodes_per_seed": 8,
+    "n_slots_per_episode": 6,
+    "carrier_frequency_hz": 28000000000,
+    "band": "FR2",
+    "policies": {
+      "no_adaptation": {
+        "mean_snr_linear": {
+          "n": 5,
+          "mean": 0.017142525110148417,
+          "ci_low": -0.0015097773287168076,
+          "ci_high": 0.03579482754901364,
+          "sd": 0.015024429463324121
+        },
+        "mean_snr_db": {
+          "n": 5,
+          "mean": -24.896341171010516,
+          "ci_low": -29.25915096187251,
+          "ci_high": -20.53353138014852,
+          "sd": 3.5142432511776165
+        },
+        "db_loss_vs_oracle": {
+          "n": 5,
+          "mean": 27.420944246459715,
+          "ci_low": 22.584376034599824,
+          "ci_high": 32.25751245831961,
+          "sd": 3.8958556554514856
+        },
+        "top1_match_oracle": {
+          "n": 5,
+          "mean": 0.004166666666666667,
+          "ci_low": -0.0073999999999999995,
+          "ci_high": 0.015733333333333332,
+          "sd": 0.009316949906249124
+        },
+        "n_beam_switches": {
+          "n": 5,
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "sd": 0.0
+        },
+        "switch_cost": {
+          "n": 5,
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "sd": 0.0
+        },
+        "compute_time_ms": {
+          "n": 5,
+          "mean": 0.013008324992824782,
+          "ci_low": 0.012319706156923203,
+          "ci_high": 0.013696943828726361,
+          "sd": 0.0005546824667372853
+        },
+        "seed_means": {
+          "mean_snr_linear": [
+            0.03806008564776849,
+            0.02519175101069094,
+            0.0031021239786721425,
+            0.016464175611073887,
+            0.002894489302536637
+          ],
+          "mean_snr_db": [
+            -20.86552679148093,
+            -22.156069604409357,
+            -29.05060505855787,
+            -24.6297470570852,
+            -27.779757343519226
+          ],
+          "db_loss_vs_oracle": [
+            24.38695432575717,
+            22.78089214939478,
+            31.870294250107552,
+            27.455387832245112,
+            30.611192674793973
+          ],
+          "top1_match_oracle": [
+            0.0,
+            0.020833333333333332,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "n_beam_switches": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "switch_cost": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "compute_time_ms": [
+            0.012624499959201785,
+            0.01384899999834488,
+            0.01253162500347571,
+            0.012745124990942713,
+            0.013291375012158824
+          ]
+        }
+      },
+      "twin_informed": {
+        "mean_snr_linear": {
+          "n": 5,
+          "mean": 0.8402871379865239,
+          "ci_low": 0.40382967782649376,
+          "ci_high": 1.276744598146554,
+          "sd": 0.35156648062130175
+        },
+        "mean_snr_db": {
+          "n": 5,
+          "mean": -2.7059955285971666,
+          "ci_low": -4.782736554647376,
+          "ci_high": -0.6292545025469574,
+          "sd": 1.6728148796509115
+        },
+        "db_loss_vs_oracle": {
+          "n": 5,
+          "mean": 5.230598604046366,
+          "ci_low": 3.9217771534290113,
+          "ci_high": 6.539420054663721,
+          "sd": 1.0542556678639374
+        },
+        "top1_match_oracle": {
+          "n": 5,
+          "mean": 0.3458333333333333,
+          "ci_low": 0.2691087465164451,
+          "ci_high": 0.42255792015022153,
+          "sd": 0.06180165405913052
+        },
+        "n_beam_switches": {
+          "n": 5,
+          "mean": 4.8,
+          "ci_low": 4.62306402287833,
+          "ci_high": 4.97693597712167,
+          "sd": 0.14252192813739226
+        },
+        "switch_cost": {
+          "n": 5,
+          "mean": 1.2,
+          "ci_low": 1.1557660057195824,
+          "ci_high": 1.2442339942804175,
+          "sd": 0.035630482034348064
+        },
+        "compute_time_ms": {
+          "n": 5,
+          "mean": 0.27352710000627667,
+          "ci_low": 0.24924151984143722,
+          "ci_high": 0.2978126801711161,
+          "sd": 0.019562034625937166
+        },
+        "seed_means": {
+          "mean_snr_linear": [
+            1.0666147192304993,
+            0.32824228167022473,
+            1.1818174927805583,
+            0.6352065042316759,
+            0.9895546920196614
+          ],
+          "mean_snr_db": [
+            -2.0357722617062897,
+            -5.1383092714963325,
+            -0.7369625533774642,
+            -3.4911505973065173,
+            -2.1277829590992305
+          ],
+          "db_loss_vs_oracle": [
+            5.557199795982528,
+            5.763131816481753,
+            3.5566517449271444,
+            6.3167913724664295,
+            4.959218290373978
+          ],
+          "top1_match_oracle": [
+            0.35416666666666663,
+            0.3333333333333333,
+            0.41666666666666663,
+            0.25,
+            0.375
+          ],
+          "n_beam_switches": [
+            5.0,
+            4.625,
+            4.75,
+            4.875,
+            4.75
+          ],
+          "switch_cost": [
+            1.25,
+            1.15625,
+            1.1875,
+            1.21875,
+            1.1875
+          ],
+          "compute_time_ms": [
+            0.30816150002976883,
+            0.2670985000889914,
+            0.2600938749708348,
+            0.26650012499374043,
+            0.2657814999480479
+          ]
+        }
+      },
+      "information_equivalent": {
+        "mean_snr_linear": {
+          "n": 5,
+          "mean": 0.08328771765871833,
+          "ci_low": -0.04632840666283901,
+          "ci_high": 0.21290384198027568,
+          "sd": 0.10440578709044165
+        },
+        "mean_snr_db": {
+          "n": 5,
+          "mean": -21.032777338834038,
+          "ci_low": -23.026003998728612,
+          "ci_high": -19.039550678939463,
+          "sd": 1.605544058389452
+        },
+        "db_loss_vs_oracle": {
+          "n": 5,
+          "mean": 23.557380414283237,
+          "ci_low": 21.869912747360278,
+          "ci_high": 25.244848081206197,
+          "sd": 1.359255192029074
+        },
+        "top1_match_oracle": {
+          "n": 5,
+          "mean": 0.0125,
+          "ci_low": -0.0016662156790960437,
+          "ci_high": 0.026666215679096043,
+          "sd": 0.01141088661469096
+        },
+        "n_beam_switches": {
+          "n": 5,
+          "mean": 4.9,
+          "ci_low": 4.770164488678945,
+          "ci_high": 5.029835511321056,
+          "sd": 0.10458250331675945
+        },
+        "switch_cost": {
+          "n": 5,
+          "mean": 1.225,
+          "ci_low": 1.1925411221697362,
+          "ci_high": 1.257458877830264,
+          "sd": 0.02614562582918986
+        },
+        "compute_time_ms": {
+          "n": 5,
+          "mean": 0.07395510001515504,
+          "ci_low": 0.06475580516587885,
+          "ci_high": 0.08315439486443123,
+          "sd": 0.007410031926529265
+        },
+        "seed_means": {
+          "mean_snr_linear": [
+            0.07940943250310029,
+            0.042974275776055754,
+            0.019612509673693636,
+            0.01055254486795381,
+            0.26388982547278816
+          ],
+          "mean_snr_db": [
+            -19.1123508555857,
+            -22.199186943616354,
+            -19.941577307521435,
+            -23.043826747479123,
+            -20.86694483996758
+          ],
+          "db_loss_vs_oracle": [
+            22.633778389861938,
+            22.82400948860177,
+            22.761266499071116,
+            25.869467522639034,
+            23.698380171242327
+          ],
+          "top1_match_oracle": [
+            0.020833333333333332,
+            0.020833333333333332,
+            0.0,
+            0.0,
+            0.020833333333333332
+          ],
+          "n_beam_switches": [
+            4.875,
+            5.0,
+            4.75,
+            5.0,
+            4.875
+          ],
+          "switch_cost": [
+            1.21875,
+            1.25,
+            1.1875,
+            1.25,
+            1.21875
+          ],
+          "compute_time_ms": [
+            0.0703591250186264,
+            0.06568700001707839,
+            0.0714116250293273,
+            0.07741162497154619,
+            0.08490612503919692
+          ]
+        }
+      },
+      "exhaustive_oracle": {
+        "mean_snr_linear": {
+          "n": 5,
+          "mean": 2.0563694062334195,
+          "ci_low": 1.5140504179209142,
+          "ci_high": 2.598688394545925,
+          "sd": 0.43683794069008497
+        },
+        "mean_snr_db": {
+          "n": 5,
+          "mean": 2.5246030754491997,
+          "ci_low": 1.154109192324418,
+          "ci_high": 3.8950969585739816,
+          "sd": 1.1039328117487983
+        },
+        "db_loss_vs_oracle": {
+          "n": 5,
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "sd": 0.0
+        },
+        "top1_match_oracle": {
+          "n": 5,
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "sd": 0.0
+        },
+        "n_beam_switches": {
+          "n": 5,
+          "mean": 4.95,
+          "ci_low": 4.8650027059254235,
+          "ci_high": 5.034997294074577,
+          "sd": 0.06846531968814576
+        },
+        "switch_cost": {
+          "n": 5,
+          "mean": 1.2375,
+          "ci_low": 1.2162506764813559,
+          "ci_high": 1.2587493235186442,
+          "sd": 0.01711632992203644
+        },
+        "compute_time_ms": {
+          "n": 5,
+          "mean": 0.725204175009253,
+          "ci_low": 0.7038118862440496,
+          "ci_high": 0.7465964637744565,
+          "sd": 0.017231488426981308
+        },
+        "seed_means": {
+          "mean_snr_linear": [
+            2.3758507163321054,
+            1.3290911479342329,
+            2.084065934333707,
+            2.074224507672164,
+            2.4186147248948866
+          ],
+          "mean_snr_db": [
+            3.5214275342762376,
+            0.6248225449854207,
+            2.8196891915496805,
+            2.825640775159912,
+            2.8314353312747476
+          ],
+          "db_loss_vs_oracle": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "top1_match_oracle": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "n_beam_switches": [
+            4.875,
+            5.0,
+            4.875,
+            5.0,
+            5.0
+          ],
+          "switch_cost": [
+            1.21875,
+            1.25,
+            1.21875,
+            1.25,
+            1.25
+          ],
+          "compute_time_ms": [
+            0.7318436249761362,
+            0.7345935000557802,
+            0.7448542500441135,
+            0.7114168749637884,
+            0.703312625006447
+          ]
+        }
+      }
+    },
+    "effect_sizes": {
+      "no_adaptation": {
+        "cohens_d_vs_no_adaptation_snr_db": 0.0
+      },
+      "twin_informed": {
+        "cohens_d_vs_no_adaptation_snr_db": 8.063031026695024
+      },
+      "information_equivalent": {
+        "cohens_d_vs_no_adaptation_snr_db": 1.4141874208512146
+      },
+      "exhaustive_oracle": {
+        "cohens_d_vs_no_adaptation_snr_db": 10.527622686884994
+      }
+    },
+    "evidence_class": "SYNTHETIC_SIM",
+    "latency_class": "HOST_PROCESS_TIMING",
+    "sub_ms_inference_proven": false
+  },
+  "ota": false
+}

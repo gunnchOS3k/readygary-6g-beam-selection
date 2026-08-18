@@ -1,0 +1,6 @@
+{
+  "grpc_serving": false,
+  "status": "BLOCKED_OPTIONAL_BACKEND",
+  "reason": "grpcio not importable (ModuleNotFoundError)",
+  "http_fallback": "deploy/server.py"
+}

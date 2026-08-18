@@ -1,0 +1,20 @@
+{
+  "model": "tiny_beam_scorer",
+  "n_in": 64,
+  "n_hid": 16,
+  "n_out": 8,
+  "carrier_hz": 28000000000,
+  "band": "FR2",
+  "never": "Sub-6",
+  "npz": "deploy/artifacts/tiny_beam_scorer.npz",
+  "onnx": {
+    "onnx_written": false,
+    "onnx_path": "/Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/deploy/artifacts/tiny_beam_scorer.onnx",
+    "blocker": "ONNX_EXPORT_BLOCKED_OPTIONAL_DEP: ModuleNotFoundError"
+  },
+  "sub_ms_inference_proven": false,
+  "sub_ms_inference_target": true,
+  "evidence_class": "SYNTHETIC_SIM",
+  "latency_class": "HOST_PROCESS_TIMING",
+  "note": "Seeded untrained logits for deploy plumbing, not a claimed accuracy model."
+}

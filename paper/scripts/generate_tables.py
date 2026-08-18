@@ -212,6 +212,68 @@ def write_figures() -> None:
     print("wrote", png)
 
 
+def _ci_cell(block: dict, key: str) -> str:
+    u = block.get(key) or {}
+    if u.get("mean") is None:
+        return "nan"
+    return f"{fmt(u.get('mean'))} [{fmt(u.get('ci_low'))}, {fmt(u.get('ci_high'))}]"
+
+
+def write_additive() -> None:
+    src = EXP / "rq2_beam_selection_fr2_additive_heldout.json"
+    if not src.exists():
+        src = EXP / "rq2_beam_selection_fr2_additive_train.json"
+    md = TABLES / "rq2_additive.md"
+    tex = TABLES / "rq2_additive.tex"
+    csv_path = TABLES / "rq2_additive.csv"
+    if not src.exists():
+        pending(tex, "Missing additive JSON.")
+        md.write_text("**RESULT_PENDING.** Missing additive JSON.\n", encoding="utf-8")
+        return
+    data = json.loads(src.read_text(encoding="utf-8"))
+    rows = []
+    for name, block in (data.get("gnn_multi_bs") or {}).items():
+        rows.append({"arm": "gnn", "name": name, "snr_db": (block.get("mean_snr_db") or {}).get("mean")})
+    for name, block in (data.get("adaptive_tracking") or {}).items():
+        rows.append({"arm": "adaptive", "name": name, "snr_db": (block.get("mean_snr_db") or {}).get("mean")})
+    with csv_path.open("w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["arm", "name", "snr_db"])
+        w.writeheader()
+        w.writerows(rows)
+    lines = [
+        "# Additive FR2 arms (SYNTHETIC_SIM, HOST_PROCESS_TIMING, 28 GHz FR2, never Sub-6)",
+        "",
+        f"Source `{src.name}`. Twin/sim ≠ OTA. Sub-ms TARGET, not proven.",
+        "",
+        "## Channel backends",
+        "",
+        "| backend | available | evidence | oracle SNR linear mean |",
+        "|---|---|---|---|",
+    ]
+    for name, block in (data.get("channel_oracle") or {}).items():
+        ora = block.get("oracle_mean_snr_linear") or {}
+        lines.append(
+            f"| `{name}` | {block.get('available')} | {block.get('evidence_class')} | {fmt(ora.get('mean'))} |"
+        )
+    lines += ["", "## GNN multi-BS", "", "| mode | SNR dB mean [95% CI] | switches |", "|---|---|---|"]
+    for name, block in (data.get("gnn_multi_bs") or {}).items():
+        lines.append(
+            f"| `{name}` | {_ci_cell(block, 'mean_snr_db')} | {fmt((block.get('n_beam_switches') or {}).get('mean'))} |"
+        )
+    lines += ["", "## Adaptive tracking", "", "| policy | SNR dB mean [95% CI] | probes | switches |", "|---|---|---|---|"]
+    for name, block in (data.get("adaptive_tracking") or {}).items():
+        lines.append(
+            f"| `{name}` | {_ci_cell(block, 'mean_snr_db')} | {fmt((block.get('probes_used') or {}).get('mean'))} | {fmt((block.get('n_beam_switches') or {}).get('mean'))} |"
+        )
+    md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    tex.write_text(
+        "\\textbf{Additive FR2 arms (SYNTHETIC\\_SIM).} "
+        "See \\texttt{paper/tables/rq2\\_additive.md}. Sub-ms is TARGET, not proven.\n",
+        encoding="utf-8",
+    )
+    print("wrote", md)
+
+
 def main() -> int:
     write_policy_table(
         TRAIN,
@@ -226,6 +288,7 @@ def main() -> int:
     write_shift()
     write_ablation()
     write_figures()
+    write_additive()
     return 0
 
 
