@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install minimal test deps
+        run: python3 -m pip install pytest numpy pyyaml matplotlib
+      - name: make reproduce
+        run: make reproduce
+      - name: Supervisor-ready files
+        run: |
+          test -f LICENSE
+          test -f CITATION.cff
+          test -f REPRODUCIBILITY.md
+          test -f docs/uml/README.md
+          test -f docs/packets/EXTERNAL_REPRODUCTION_PACKET.md
+          test -f results/benchmark_table.md
+          python3 -c "import json; d=json.load(open('results/e2e/benchmark_metrics.json')); assert d['evidence_class']=='SYNTHETIC_SIM'; assert d['sub_ms_inference_proven'] is False"
