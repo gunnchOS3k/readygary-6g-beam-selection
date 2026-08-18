@@ -1,0 +1,113 @@
+# Paper II digital experiment protocol (FROZEN before held-out generation)
+# Subject: Radio-Aware Digital-Twin-Informed Cross-Layer Orchestration for Service Continuity
+# Companion PHY/beam evidence for Paper II (ReadyGary).
+# Evidence class: SYNTHETIC_SIM. latency_class: HOST_PROCESS_TIMING.
+# 28 GHz is FR2 mmWave (3GPP TS 38.101-2), NEVER Sub-6 / FR1.
+# Synthetic TDL timing ≠ measured RF, gNB slot time, ONNX/TensorRT, or OTA.
+
+paper: II
+experiment_id: rq2_beam_selection_fr2
+title: Radio-Aware Digital-Twin-Informed Cross-Layer Orchestration for Service Continuity
+evidence_class: SYNTHETIC_SIM
+latency_class: HOST_PROCESS_TIMING
+sub_ms_inference_proven: false
+frozen: true
+frozen_date: "2026-08-18"
+
+carrier:
+  frequency_hz: 28000000000
+  band: FR2
+  label: mmWave
+  never: Sub-6
+  citation: 3GPP TS 38.101-2
+
+hypotheses:
+  H1: >
+    On held-out FR2 TDL draws, exhaustive_oracle mean SNR (linear) meets or
+    exceeds every non-oracle policy (model-oracle validity check).
+  H2: >
+    twin_informed (AoA-windowed search) and information_equivalent (nearest DFT
+    bin from the same AoA) receive the same geometry hint; a dB gap is a
+    policy-structure effect.
+  H3: >
+    Hierarchical / edge_only search reduces HOST_PROCESS_TIMING compute_time_ms
+    versus exhaustive_oracle, at some SNR loss.
+  H0_to_reject: A static first-slot beam is information-equivalent to AoA-informed search.
+
+split:
+  train_family: in_distribution
+  held_out_family: held_out
+  domain_shift_families:
+    - high_blockage
+    - high_mobility
+  train_seeds: [0, 1, 2, 3, 4]
+  held_out_seeds: [100, 101, 102, 103, 104]
+  n_episodes_per_seed: 16
+  n_slots_per_episode: 8
+
+channel:
+  num_tx_ant: 8
+  num_rx_ant: 8
+  num_tx_beams: 8
+  num_rx_beams: 8
+  path_count_in_distribution: [3, 6]
+  path_count_high_blockage: [6, 10]
+  mobility_scale_in_distribution: 1.0
+  mobility_scale_high_mobility: 4.0
+  generator: seeded_synthetic_tdl_ula
+  not_claimed: 3GPP TR 38.901 compliant geometry
+
+policies:
+  - no_adaptation
+  - static
+  - local_only
+  - cloud_only
+  - edge_only
+  - rule_based
+  - optimization_based
+  - twin_informed
+  - information_equivalent
+  - exhaustive_oracle
+
+policy_definitions:
+  no_adaptation: Always beam pair (0, 0).
+  static: Exhaustive on slot 0, freeze pair for the episode.
+  local_only: Fix tx_idx=0; search rx beams only (UE-side codebook).
+  cloud_only: Full exhaustive search; compute billed as cloud HOST_PROCESS_TIMING.
+  edge_only: Hierarchical coarse-to-fine search (existing sim/baselines/hierarchical_search.py logic, reduced codebook).
+  rule_based: Hold last pair; re-search a 3x3 window if linear SNR drops > 3 dB vs last accepted.
+  optimization_based: Same hierarchical search as edge_only (simple optimization already in code).
+  twin_informed: Use generator AoA hint to center a +/-2 beam window (twin geometry).
+  information_equivalent: Same AoA hint; snap to nearest DFT bin; no neighbor search.
+  exhaustive_oracle: Full codebook search. Valid model-oracle for this DFT codebook on the generated H. Not measured RF.
+
+ablations:
+  - full
+  - no_aoa_hint
+  - reduced_codebook
+  - no_mobility
+
+metrics:
+  primary: mean_snr_linear
+  secondary:
+    - mean_snr_db
+    - db_loss_vs_oracle
+    - top1_match_oracle
+    - n_beam_switches
+    - switch_cost
+    - compute_time_ms
+
+costs:
+  beam_switch_penalty_db: 0.25
+  compute_time_is: HOST_PROCESS_TIMING
+
+statistics:
+  ci_level: 0.95
+  ci_method: student_t_over_seed_means
+  effect_size: cohens_d_vs_no_adaptation
+  aggregation: mean_over_slots_then_episodes_then_seeds
+
+held_out_rule: >
+  Held-out JSON must not be generated until this protocol file exists in the
+  working tree (and should be committed first). Held-out seeds 100-104 are the
+  confirmatory split.

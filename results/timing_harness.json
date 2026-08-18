@@ -1,0 +1,12 @@
+{
+  "evidence_class": "SYNTHETIC_SIM",
+  "latency_class": "HOST_PROCESS_TIMING",
+  "sub_ms_inference_proven": false,
+  "toy_oracle_callable_ms": 0.0224,
+  "search": {
+    "exhaustive_search_ms": 0.6235,
+    "hierarchical_search_ms": 0.0672,
+    "note": "numpy/matplotlib optional; skipped if import fails"
+  },
+  "note": "Wall-clock around Python callables on the host. Not gNB slot time, not ONNX/TensorRT, not OTA. Do not cite as proof of sub-ms edge inference."
+}

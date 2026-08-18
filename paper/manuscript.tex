@@ -1,0 +1,33 @@
+% MANUSCRIPT STATUS: DIGITAL_RESULTS_VALIDATED
+% Evidence: SYNTHETIC_SIM FR2 TDL. 28 GHz is FR2 mmWave, not Sub-6.
+% HOST_PROCESS_TIMING is not measured RF. Sub-ms inference unproven.
+% Companion to Paper II orchestration in spectrumx-ai-ran-gary.
+% Not SUBMITTED. Not ACCEPTED. CONFERENCE_RC: NO.
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,hyperref,graphicx}
+\title{Radio-Aware Digital-Twin-Informed Cross-Layer Orchestration for Service Continuity\\{\large Companion: FR2 28~GHz beam selection (ReadyGary)}}
+\author{Edmund Gunn Jr.\\Independent researcher --- no University of Oulu affiliation claimed}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{center}
+\textbf{RESULT BANNER.} Digital FR2 TDL results validated on a frozen protocol.
+\texttt{SYNTHETIC\_SIM}. 28~GHz is FR2, never Sub-6.
+\texttt{HOST\_PROCESS\_TIMING} $\neq$ measured RF. Sub-ms inference unproven.
+Not SUBMITTED.
+\end{center}
+\begin{abstract}
+This companion artifact supplies the beam-selection action model for Paper~II.
+Seeded TDL channels use $f_c=28\times10^9$~Hz, labelled FR2~mmWave after 3GPP~TS~38.101-2~\cite{3gpp_ts38101_2}, not Sub-6.
+On held-out draws, exhaustive codebook search is a valid model-oracle for this DFT codebook; hierarchical search trades $1.2082$~dB mean SNR for lower host-process time.
+An AoA-informed window and an information-equivalent nearest DFT bin see the same geometry hint and diverge: windowed search is better than nearest-bin, but worse than hierarchical search that ignores the hint on this generator.
+DeepMIMO is related methodology~\cite{alkhateeb2019deepmimo} and was not required to produce these tables.
+\end{abstract}
+\input{sections/introduction}
+\input{sections/method}
+\input{sections/results}
+\input{sections/limitations}
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\end{document}

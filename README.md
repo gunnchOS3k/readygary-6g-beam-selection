@@ -11,6 +11,8 @@
 | **Readiness** | [END_TO_END_READINESS.md](docs/END_TO_END_READINESS.md) |
 | **Smoke test** | [E2E_RUN_RECORD.md](reproducibility/E2E_RUN_RECORD.md) |
 | **Artifacts** | [results/e2e/](results/e2e/) |
+| **Reproduce** | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) · [external packet](docs/packets/EXTERNAL_REPRODUCTION_PACKET.md) |
+| **UML** | [docs/uml/README.md](docs/uml/README.md) |
 
 > **Edge-efficient beam selection for 5G/6G mmWave using hybrid ML + physics baselines**
 
@@ -82,9 +84,9 @@ Deep dive: [docs/HOW_THIS_FITS_GUNNCHOS.md](docs/HOW_THIS_FITS_GUNNCHOS.md) · [
 
 ## How this fits 6G PhD research
 
-Relevant themes: **mmWave/FR3 beam management · wireless systems · edge ML inference measurement**
+Relevant themes: **FR2 mmWave beam management (28 GHz-class synthetic TDL) · wireless systems · edge ML inference measurement**. FR3 (upper mid-band, ~7–24 GHz) is a related 6G topic, **not** a measured band in this repo.
 
-Oulu/CWC-style alignment (research direction, not affiliation claim): [docs/HOW_THIS_FITS_6G_PHD_RESEARCH.md](docs/HOW_THIS_FITS_6G_PHD_RESEARCH.md)
+Wireless-engineering alignment (research direction, **not** an institutional affiliation claim): [docs/HOW_THIS_FITS_6G_PHD_RESEARCH.md](docs/HOW_THIS_FITS_6G_PHD_RESEARCH.md)
 
 ## What exists today
 
@@ -132,7 +134,7 @@ flowchart LR
   Metrics --> Paper[Paper figures]
 ```
 
-More diagrams: [docs/diagrams/README.md](docs/diagrams/README.md) (if present) · [docs/uml/README.md](docs/uml/README.md) (spectrumx)
+Architecture diagrams (current / future / legacy): [docs/uml/README.md](docs/uml/README.md) · older sketches: [docs/diagrams/README.md](docs/diagrams/README.md)
 
 ## Start here based on who you are
 
@@ -262,9 +264,9 @@ graph TB
         G --> H[Top-k Beams]
     end
 
-    subgraph "⚡ Edge Runtime"
-        I[ONNX/TensorRT] --> J[<1ms Inference]
-        K[gRPC/REST API] --> L[Real-time Service]
+    subgraph "⚡ Edge runtime (target, not measured)"
+        I[ONNX/TensorRT plan] --> J[Sub-ms inference UNPROVEN]
+        K[API scaffold] --> L[Not in tree as a running service]
     end
 
     subgraph "☁️ Cloud Infrastructure"
@@ -298,11 +300,8 @@ readygary-6g-beam-selection/
 │   └── data/                   # Generated datasets
 ├── 📊 scripts/                 # Dataset builders + utilities
 │   └── generate_dataset.py     # TDL channel generation
-├── 🚀 deploy/                  # Production deployment
-│   ├── server/                 # FastAPI/gRPC service
-│   ├── client/                 # Python/TypeScript SDKs
-│   └── docker/                 # Containerization
-└── 📈 docs/figs/              # Results and visualizations
+├── 🚀 deploy/                  # Documented as a future edge path — directory is empty in this checkout
+└── 📈 docs/uml/               # Current / future / legacy architecture diagrams
 ```
 
 ---
@@ -312,8 +311,7 @@ readygary-6g-beam-selection/
 ### **Novel Algorithms**
 - **Hybrid Learning**: Combines physics-based baselines with learned predictors
 - **Multi-Modal Features**: CSI-RS, location, IMU, and temporal sequences
-- **Graph Neural Networks**: Multi-BS beam coordination and handover prediction
-- **Reinforcement Learning**: Adaptive beam tracking with probe budget constraints
+- **Graph Neural Networks / RL**: **Not implemented** in `sim/` — future study arms only (do not cite as current results)
 
 ### **Realistic Channel Models** 🆕
 - **TDL Channels**: Ray-tracing based instead of i.i.d. matrices
@@ -336,23 +334,35 @@ readygary-6g-beam-selection/
 
 ## 📊 **Experimental Results**
 
-### **Baseline Performance**
-| Algorithm | Top-1 Acc | Latency | Probe Cost | SNR Loss |
-|-----------|-----------|---------|------------|----------|
-| **Exhaustive Search** | 100% | 50ms | 100% | 0 dB |
-| **Hierarchical Search** | 95% | 12ms | 25% | 0.5 dB |
-| **LSTM Tracker** | 85% | 0.8ms | 15% | 1.2 dB |
+**Evidence class: `SYNTHETIC_SIM`.** Do **not** read the numbers below as measured RF, OTA, or calibrated mmWave. Sub-millisecond inference is **unproven**.
 
-### **Synthetic Scenarios**
-- **UMi Street Canyon**: Pedestrian mobility, vehicle blockers
-- **UMa Urban**: High-rise buildings, dense BS deployment
-- **Indoor Office**: NLOS conditions, furniture blockage
+Regenerate and cite these files (not unsourced README tables):
 
-### **Carrier Frequencies**
-- **28 GHz**: Sub-6 GHz baseline
-- **39 GHz**: mmWave sweet spot
-- **60 GHz**: High-frequency challenges
-- **140 GHz**: THz exploration
+- [`results/e2e/benchmark_summary.md`](results/e2e/benchmark_summary.md)
+- [`results/e2e/benchmark_metrics.json`](results/e2e/benchmark_metrics.json)
+- [`results/benchmark_table.md`](results/benchmark_table.md)
+
+```bash
+make benchmark-toy
+# equivalent: python3 scripts/run_benchmark_table.py --toy
+make timing   # host-process timing harness — not hardware
+```
+
+Host-process wall times from `sim/metrics.inference_latency_ms` and `scripts/run_timing_harness.py` are **`HOST_PROCESS_TIMING`**, not radio latency.
+
+### **Synthetic scenario labels** (generators, not field campaigns)
+- **UMi / UMa / indoor**: names used in docs and the TDL generator (`scripts/generate_dataset.py`) — not measured traces.
+
+### **Carrier frequencies** (3GPP-style labels — not Sub-6 vs mmWave mix-ups)
+
+| Label in docs / `ChannelConfig.carrier_freq` | Band region | Status in this repo |
+|---|---|---|
+| **28 GHz** (`28e9` in `scripts/generate_dataset.py`) | **FR2 mmWave** — **not** Sub-6 / FR1 | Synthetic TDL default only |
+| **39 GHz** | **FR2 mmWave** | Scenario label; not measured |
+| **60 GHz** | **FR2** / unlicensed 60 GHz | Scenario label; not measured |
+| **140 GHz** | sub-THz / future | Exploration label only |
+| **Sub-6 / FR1** | ≲ 7.125 GHz | **Not** the 28 GHz default |
+| **FR3** | ~7.125–24.25 GHz upper mid-band | Related 6G research topic; **not** implemented as a measured band here |
 
 ---
 

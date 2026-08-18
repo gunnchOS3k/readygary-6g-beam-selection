@@ -1,0 +1,17 @@
+\begin{table}[h]\centering
+\caption{Held-out FR2 TDL beam policies (SYNTHETIC\_SIM; HOST\_PROCESS\_TIMING; 28 GHz FR2 not Sub-6).}
+\begin{tabular}{lrrrrrrrr}\toprule
+policy & SNR dB & CI low & CI high & dB loss & top1 & switches & compute ms & $d$ \\
+\midrule
+no\_adaptation & -25.2498 & -26.5699 & -23.9298 & 27.7762 & 0.0031 & 0.0000 & 0.0180 & 0.0000 \\
+static & -7.5655 & -8.4041 & -6.7269 & 10.0918 & 0.1453 & 0.0000 & 0.1409 & 19.8531 \\
+local\_only & -10.2946 & -10.9210 & -9.6682 & 12.8209 & 0.0891 & 5.8000 & 0.1435 & 17.9698 \\
+cloud\_only & 2.5263 & 1.7954 & 3.2572 & 0.0000 & 1.0000 & 6.7625 & 1.0243 & 32.3192 \\
+edge\_only & 1.3182 & 0.5571 & 2.0792 & 1.2082 & 0.7391 & 6.7125 & 0.3989 & 30.6126 \\
+rule\_based & -14.7768 & -16.4586 & -13.0949 & 17.3031 & 0.0453 & 4.0250 & 0.1258 & 8.6001 \\
+optimization\_based & 1.3182 & 0.5571 & 2.0792 & 1.2082 & 0.7391 & 6.7125 & 0.3831 & 30.6126 \\
+twin\_informed & -3.6178 & -4.6727 & -2.5628 & 6.1441 & 0.2922 & 6.8125 & 0.3848 & 22.4756 \\
+information\_equivalent & -21.3758 & -23.4387 & -19.3128 & 23.9021 & 0.0078 & 6.8875 & 0.1079 & 2.7772 \\
+exhaustive\_oracle & 2.5263 & 1.7954 & 3.2572 & 0.0000 & 1.0000 & 6.7625 & 1.0464 & 32.3192 \\
+\bottomrule\end{tabular}
+\end{table}

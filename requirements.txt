@@ -25,4 +25,3 @@ flake8>=4.0.0
 # Optional: 5G simulation
 # sionna>=0.14.0  # Uncomment if available
 # quadriga>=1.0.0  # Uncomment if available
-EOF'

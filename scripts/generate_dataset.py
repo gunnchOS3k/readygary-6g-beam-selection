@@ -15,7 +15,7 @@ class ChannelConfig:
     num_channels: int = 10000
     num_tx_ant: int = 8
     num_rx_ant: int = 8
-    carrier_freq: float = 28e9  # 28 GHz
+    carrier_freq: float = 28e9  # 28 GHz FR2 mmWave (not Sub-6 / FR1)
     num_paths: Tuple[int, int] = (3, 8)  # Min, max paths
     path_loss_range: Tuple[float, float] = (0.1, 2.0)
     mobility_speed: float = 1.0  # m/s
@@ -294,4 +294,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-EOF'
