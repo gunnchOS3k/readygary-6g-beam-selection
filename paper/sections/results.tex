@@ -1,0 +1,31 @@
+\section{Results}
+Numbers are from \texttt{results/experiments/rq2\_beam\_selection\_fr2\_heldout.json}.
+\texttt{SYNTHETIC\_SIM}. Not measured RF. 28~GHz FR2.
+
+\input{tables/rq2_beam_heldout_policies}
+
+Held-out mean SNR:
+\texttt{exhaustive\_oracle} / \texttt{cloud\_only} $2.5263$~dB $[1.7954,3.2572]$ (identical search; model-oracle check passes),
+\texttt{edge\_only} / \texttt{optimization\_based} $1.3182$~dB $[0.5571,2.0792]$ ($1.2082$~dB loss versus oracle) at $0.3714$~ms versus oracle $1.0244$~ms \texttt{HOST\_PROCESS\_TIMING},
+\texttt{twin\_informed} $-3.6178$~dB $[{-}4.6727,{-}2.5628]$ ($d=22.48$ versus \texttt{no\_adaptation}),
+\texttt{static} $-7.5655$~dB,
+\texttt{local\_only} $-10.2946$~dB,
+\texttt{rule\_based} $-14.7768$~dB,
+\texttt{information\_equivalent} $-21.3758$~dB $[{-}23.4387,{-}19.3128]$,
+\texttt{no\_adaptation} $-25.2498$~dB $[{-}26.5699,{-}23.9298]$.
+Same AoA hint, different policy: windowed twin search beats nearest-bin by a wide margin on this generator (H2).
+H1 (oracle not worse than non-oracles on linear/dB SNR) holds.
+H3 holds as a host-time versus SNR trade on the 8$\times$8 codebook; it is not an RF latency result.
+
+\input{tables/rq2_beam_ablations}
+
+Ablation \texttt{no\_aoa\_hint} moves \texttt{twin\_informed} to hierarchical SNR $1.3182$~dB, \emph{better} than the hinted window ($-3.6178$~dB).
+The AoA-to-DFT-bin map is a weak proxy on this synthetic ULA; reporting that is required honesty, not a claim that geometry hints are useless in measured FR2 channels.
+
+\input{tables/rq2_beam_domain_shift}
+
+\texttt{high\_blockage} lowers SNR for every policy (oracle $-5.1198$~dB; twin $-11.4732$~dB; no-adapt $-32.3074$~dB).
+\texttt{high\_mobility} preserves the same ranking.
+
+If matplotlib is missing, \texttt{paper/figures/} carries \texttt{RESULT\_PENDING}. Generated chart: \texttt{figures/rq2\_heldout\_snr.png}.
+\input{tables/rq2_beam_train_policies}

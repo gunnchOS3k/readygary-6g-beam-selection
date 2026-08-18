@@ -12,7 +12,9 @@ No returned evidence record from an independent researcher exists in this tree (
 
 ## What this repo can reproduce today
 
-Toy metrics and host-process timers. **Not** measured RF. **Not** sub-ms edge inference. 28 GHz in the TDL generator is **FR2 mmWave**, not Sub-6.
+Toy metrics, host-process timers, and the frozen Paper II FR2 digital programme. **Not** measured RF. **Not** sub-ms edge inference. 28 GHz in the TDL generator is **FR2 mmWave**, not Sub-6.
+
+`make paper-reproduce` requires `paper/artifacts/experiment_protocol.yaml` and writes `paper/tables/` plus `results/experiments/rq2_beam_selection_fr2_heldout.json`.
 
 ## Frozen checkout
 
@@ -22,7 +24,8 @@ cd readygary-6g-beam-selection
 git checkout <frozen-sha-from-the-draft-PR>
 python3 -m venv .venv && source .venv/bin/activate
 python3 -m pip install pytest numpy pyyaml matplotlib
-make reproduce
+make test
+make paper-reproduce
 ```
 
 Expect:

@@ -1,0 +1,15 @@
+\section{Method}
+Protocol \texttt{paper/artifacts/experiment\_protocol.yaml} was frozen and committed before held-out JSON.
+Experiment \texttt{rq2\_beam\_selection\_fr2}: seeded ULA TDL at $f_c=28\times10^9$~Hz, 8 antennas, 8 DFT beams.
+The generator is \texttt{SYNTHETIC\_SIM} and is not claimed to be 3GPP TR~38.901-compliant.
+DeepMIMO~\cite{alkhateeb2019deepmimo} is cited as related ray-dataset methodology only.
+
+\paragraph{Baselines.}
+\texttt{no\_adaptation} (beam $(0,0)$), \texttt{static} (slot-0 exhaustive freeze), \texttt{local\_only} (tx frozen, rx search), \texttt{cloud\_only} (full exhaustive), \texttt{edge\_only} / \texttt{optimization\_based} (hierarchical coarse-to-fine, already in \texttt{sim/baselines/}), \texttt{rule\_based} (hold unless 3~dB drop), \texttt{twin\_informed} (AoA-centered $\pm2$ window), \texttt{information\_equivalent} (same AoA, nearest DFT bin, no neighbor search), \texttt{exhaustive\_oracle}.
+
+\paragraph{Splits.}
+Train seeds $\{0,\ldots,4\}$; held-out $\{100,\ldots,104\}$; 16 episodes $\times$ 8 slots.
+Domain shift: \texttt{high\_blockage}, \texttt{high\_mobility}.
+Ablations: \texttt{no\_aoa\_hint}, \texttt{reduced\_codebook}, \texttt{no\_mobility}.
+Statistics: Student-$t$ 95\% CI over five seed means; Cohen's $d$ versus \texttt{no\_adaptation} on SNR~dB.
+All runtimes are \texttt{HOST\_PROCESS\_TIMING}. \texttt{sub\_ms\_inference\_proven} remains false.
