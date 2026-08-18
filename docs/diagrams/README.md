@@ -1,5 +1,5 @@
 # Diagrams — readygary-6g-beam-selection
 
-Repo-specific Mermaid. Render in GitHub or VS Code.
+Older Mermaid sketches live here. **Supervisor / architecture pack:** [`docs/uml/README.md`](../uml/README.md) (`current/` / `future/` / `legacy/`).
 
-See `docs/05_UML_MODELING.md`.
+These `*.mmd` files are indexed as **legacy** when they omit evidence class (`SYNTHETIC_SIM`) or FR2 vs Sub-6 labeling.
