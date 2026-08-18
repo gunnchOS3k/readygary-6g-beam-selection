@@ -14,6 +14,21 @@
 | **Reproduce** | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) · [external packet](docs/packets/EXTERNAL_REPRODUCTION_PACKET.md) |
 | **UML** | [docs/uml/README.md](docs/uml/README.md) |
 
+## Status levels (honest)
+
+28 GHz is **FR2 mmWave** (3GPP TS 38.101-2), **never Sub-6**. Twin/sim ≠ OTA. `<1 ms` inference is a **TARGET**, not a measured fact.
+
+| Level | What it means here |
+|---|---|
+| **IMPLEMENTED TODAY** | Numpy FR2 TDL/CDL-structure channels; baselines; twin vs information-equivalent; GNN multi-BS + ablation; adaptive trackers (static/heuristic/opt/bandit/constrained RL); deploy scorer + HTTP `/health` `/metadata` `/metrics` `/infer` `/benchmark`; Docker; ONNX export *when `onnx` is installed*; timing stages pre/model/post/full with warmup, batch=1, p50/p95/p99 |
+| **VALIDATED TODAY** | `make test` + Paper II `SYNTHETIC_SIM` held-out tables (`HOST_PROCESS_TIMING`). Independent reproduction still pending. |
+| **TARGET** | Sub-ms edge inference; TensorRT engine; Sionna RT scene; AODT geometry; OTA/DeepMIMO measured RF |
+| **ACTIVE ENGINEERING** | FastAPI/gRPC when extras installed; NVIDIA Aerial/pyAerial/Sionna/AODT/TensorRT/CUDA/Nsight adapters that fail closed without member-only software |
+
+Open NumPy/PyTorch path **must reproduce without NVIDIA membership**. Adapters are optional. Never commit NVIDIA credentials.
+
+Deploy: [deploy/README.md](deploy/README.md). Additive protocol: `paper/artifacts/experiment_protocol_additive.yaml`.
+
 > **Edge-efficient beam selection for 5G/6G mmWave using hybrid ML + physics baselines**
 
 [![LaTeX](https://github.com/gunnchOS3k/readygary-6g-beam-selection/actions/workflows/latex.yml/badge.svg)](https://github.com/gunnchOS3k/readygary-6g-beam-selection/actions/workflows/latex.yml)

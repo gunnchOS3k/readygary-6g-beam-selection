@@ -1,0 +1,108 @@
+# Additive Paper II protocol (ReadyGary). Does NOT replace the frozen
+# paper/artifacts/experiment_protocol.yaml held-out corpus.
+# 28 GHz is FR2 mmWave (3GPP TS 38.101-2), NEVER Sub-6.
+# Twin/sim ≠ OTA. Sub-ms inference is TARGET, not fact.
+
+paper: II
+experiment_id: rq2_beam_selection_fr2_additive
+title: Additive FR2 beam arms — channels, GNN multi-BS, adaptive tracking, runtime
+evidence_class: SYNTHETIC_SIM
+latency_class: HOST_PROCESS_TIMING
+sub_ms_inference_proven: false
+sub_ms_inference_target: true
+frozen: true
+frozen_date: "2026-08-18"
+parent_protocol: paper/artifacts/experiment_protocol.yaml
+
+carrier:
+  frequency_hz: 28000000000
+  band: FR2
+  label: mmWave
+  never: Sub-6
+  citation: 3GPP TS 38.101-2
+
+channel:
+  num_tx_ant: 8
+  num_rx_ant: 8
+  num_tx_beams: 8
+  num_rx_beams: 8
+  path_count_in_distribution: [3, 6]
+  path_count_high_blockage: [6, 10]
+  mobility_scale_in_distribution: 1.0
+  mobility_scale_high_mobility: 4.0
+  generator: seeded_synthetic_tdl_ula
+  not_claimed: 3GPP TR 38.901 compliant geometry
+
+channel_backends:
+  - synthetic
+  - tdl_a
+  - tdl_c
+  - cdl_a
+  - sionna_rt
+  - aodt
+
+channel_backend_notes:
+  synthetic: Seeded ULA TDL-like draws (existing generator). SYNTHETIC_SIM.
+  tdl_a: Parametric 3GPP TDL-A delay/power structure at 28e9 Hz. Not a calibrated TR 38.901 campaign.
+  tdl_c: Parametric 3GPP TDL-C delay/power structure at 28e9 Hz. Not OTA.
+  cdl_a: Parametric 3GPP CDL-A clustered delays. SYNTHETIC_SIM.
+  sionna_rt: Optional NVIDIA Sionna RT adapter. If import fails: BLOCKED_OPTIONAL_BACKEND.
+  aodt: Optional Aerial Omniverse Digital Twin adapter. If no access: BLOCKED_OPTIONAL_BACKEND.
+
+split:
+  train_seeds: [0, 1, 2, 3, 4]
+  held_out_seeds: [200, 201, 202, 203, 204]
+  n_episodes_per_seed: 8
+  n_slots_per_episode: 6
+  n_bs: 3
+
+policies:
+  - no_adaptation
+  - exhaustive_oracle
+  - independent_multi_bs
+  - gnn_multi_bs
+  - gnn_no_message
+  - adaptive_static
+  - adaptive_heuristic
+  - adaptive_opt
+  - adaptive_bandit
+  - adaptive_constrained_rl
+  - twin_informed
+  - information_equivalent
+
+ablations:
+  - full
+  - gnn_no_message
+  - no_switch_penalty
+  - probe_budget_1
+  - probe_budget_4
+
+costs:
+  beam_switch_penalty_db: 0.25
+  probe_budget_default: 2
+  compute_time_is: HOST_PROCESS_TIMING
+
+timing:
+  warmup: 8
+  trials: 64
+  batch_size: 1
+  stages: [pre, model, post, full]
+  percentiles: [50, 95, 99]
+  sub_ms_is: TARGET
+  tensorrt_without_gpu: BLOCKED_GPU
+
+hypotheses:
+  H_gnn: >
+    GNN multi-BS mean SNR is not worse than independent_multi_bs by more than
+    the switch/compute cost; negative results are kept.
+  H_adaptive: >
+    Constrained RL / bandit may lose to heuristic under a tight probe budget
+    (switching cost). That is a valid negative result.
+  H_channel: >
+    Rank order of policies may change under TDL-C vs TDL-A (domain shift).
+  H0: NVIDIA member-only software is required to reproduce the open path.
+
+held_out_rule: >
+  This additive protocol must exist before generating
+  results/experiments/rq2_beam_selection_fr2_additive_heldout.json.
+  Open NumPy path must reproduce without Sionna/Aerial/AODT/TensorRT.

@@ -9,6 +9,7 @@
 | timing | HOST_PROCESS_TIMING |
 | sub_ms_inference_proven | false |
 | held_out | generated from seeds 100–104 after protocol commit `d27f129` |
+| additive | `experiment_protocol_additive.yaml` — GNN/adaptive/TDL-CDL/runtime; sub-ms TARGET |
 | never | SUBMITTED, ACCEPTED |
 | conference_rc | NO |
 | conference_rc_reason | Independent reproduction not returned; SYNTHETIC_SIM only |

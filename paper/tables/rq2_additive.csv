@@ -1,0 +1,9 @@
+arm,name,snr_db
+gnn,independent_multi_bs,1.8208049157443766
+gnn,gnn_multi_bs,1.86885924621638
+gnn,gnn_no_message,1.8208049157443766
+adaptive,adaptive_static,-3.215610444551544
+adaptive,adaptive_heuristic,-6.1179740918336325
+adaptive,adaptive_opt,3.7220665723769946
+adaptive,adaptive_bandit,-22.16647280005853
+adaptive,adaptive_constrained_rl,-10.001822642574979
