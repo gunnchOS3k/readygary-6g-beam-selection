@@ -1,0 +1,369 @@
+{
+  "experiment_id": "rq2_sub6_fr1_n77",
+  "heldout": true,
+  "evidence_class": "SYNTHETIC_SIM",
+  "latency_class": "HOST_PROCESS_TIMING",
+  "sub_ms_inference_proven": false,
+  "primary_profile": "n77_us_cband",
+  "carrier": {
+    "frequency_hz": 3750000000,
+    "band": "FR1",
+    "family": "SUB6",
+    "band_id": "n77",
+    "profile_id": "n77_us_cband",
+    "below_6ghz": true,
+    "label": "Sub-6",
+    "never": "28 GHz as Sub-6",
+    "citation": "3GPP TS 38.101-1",
+    "scs_khz": 30,
+    "bandwidth_hz": 100000000,
+    "duplex": "TDD"
+  },
+  "families": {
+    "held_out": {
+      "family": "held_out",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": 1.368329824303457,
+          "ci_low": -0.6224914778334709,
+          "ci_high": 3.359151126440385,
+          "sd": 0.8013487436884941
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 85.36280452776315,
+          "ci_low": 85.36280452776315,
+          "ci_high": 85.36280452776315,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 18.762980354896055,
+          "ci_low": 18.762980354896055,
+          "ci_high": 18.762980354896055,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 3.6228888331151157,
+          "ci_low": 1.6611589009846945,
+          "ci_high": 5.584618765245537,
+          "sd": 0.7896388364347048
+        }
+      },
+      "seeds": [
+        200,
+        201,
+        202
+      ]
+    },
+    "high_blockage": {
+      "family": "high_blockage",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": -11.800709603100598,
+          "ci_low": -13.7384062158996,
+          "ci_high": -9.863012990301597,
+          "sd": 0.7799649042579567
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 116.79820502832337,
+          "ci_low": 116.79820502832337,
+          "ci_high": 116.79820502832337,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 18.762980354896055,
+          "ci_low": 18.762980354896055,
+          "ci_high": 18.762980354896055,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 0.17863382297135819,
+          "ci_low": 0.08007447198167648,
+          "ci_high": 0.2771931739610399,
+          "sd": 0.039672275964476554
+        }
+      },
+      "seeds": [
+        200,
+        201,
+        202
+      ]
+    },
+    "high_mobility": {
+      "family": "high_mobility",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": 2.202168003926259,
+          "ci_low": 1.2993430825898415,
+          "ci_high": 3.104992925262677,
+          "sd": 0.3634066079698002
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 85.36280452776315,
+          "ci_low": 85.36280452776315,
+          "ci_high": 85.36280452776315,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 275.19037853847544,
+          "ci_low": 275.19037853847544,
+          "ci_high": 275.19037853847544,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 3.296216323362675,
+          "ci_low": 2.356979469849686,
+          "ci_high": 4.235453176875664,
+          "sd": 0.37806320023835077
+        }
+      },
+      "seeds": [
+        200,
+        201,
+        202
+      ]
+    },
+    "indoor": {
+      "family": "indoor",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": -3.800709603100597,
+          "ci_low": -5.738406215899598,
+          "ci_high": -1.8630129903015953,
+          "sd": 0.779964904257957
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 116.79820502832337,
+          "ci_low": 116.79820502832337,
+          "ci_high": 116.79820502832337,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 18.762980354896055,
+          "ci_low": 18.762980354896055,
+          "ci_high": 18.762980354896055,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 1.1271032257635312,
+          "ci_low": 0.5052357620221225,
+          "ci_high": 1.7489706895049397,
+          "sd": 0.2503151389203152
+        }
+      },
+      "seeds": [
+        200,
+        201,
+        202
+      ]
+    },
+    "cell_edge": {
+      "family": "cell_edge",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": -2.800750724630807,
+          "ci_low": -4.791572026767734,
+          "ci_high": -0.80992942249388,
+          "sd": 0.8013487436884937
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 113.15667485399156,
+          "ci_low": 113.15667485399156,
+          "ci_high": 113.15667485399156,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 18.762980354896055,
+          "ci_low": 18.762980354896055,
+          "ci_high": 18.762980354896055,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 1.3872251479382127,
+          "ci_low": 0.6360673783594811,
+          "ci_high": 2.138382917516944,
+          "sd": 0.3023572905903971
+        }
+      },
+      "seeds": [
+        200,
+        201,
+        202
+      ]
+    },
+    "congestion": {
+      "family": "congestion",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": 0.47582982430345644,
+          "ci_low": -1.514991477833471,
+          "ci_high": 2.466651126440384,
+          "sd": 0.8013487436884938
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 85.36280452776315,
+          "ci_low": 85.36280452776315,
+          "ci_high": 85.36280452776315,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 18.762980354896055,
+          "ci_low": 18.762980354896055,
+          "ci_high": 18.762980354896055,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 2.9498844740227725,
+          "ci_low": 1.3525744444899392,
+          "ci_high": 4.547194503555605,
+          "sd": 0.6429519234464818
+        }
+      },
+      "seeds": [
+        200,
+        201,
+        202
+      ]
+    }
+  },
+  "supporting": {
+    "n41_us_2500": {
+      "family": "in_distribution",
+      "carrier_hz": 2593000000,
+      "band_id": "n41",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 2,
+          "mean": 1.589648714847006,
+          "ci_low": -1.2858953131528272,
+          "ci_high": 4.465192742846839,
+          "sd": 0.32005614383742514
+        },
+        "path_loss_db": {
+          "n": 2,
+          "mean": 82.1582295085958,
+          "ci_low": 82.1582295085958,
+          "ci_high": 82.1582295085958,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 2,
+          "mean": 12.973975482732124,
+          "ci_low": 12.973975482732124,
+          "ci_high": 12.973975482732124,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 2,
+          "mean": 3.116647436863982,
+          "ci_low": -0.982308361126786,
+          "ci_high": 7.21560323485475,
+          "sd": 0.4562253172584902
+        }
+      },
+      "seeds": [
+        200,
+        201
+      ]
+    },
+    "n71_us_600": {
+      "family": "in_distribution",
+      "carrier_hz": 680500000,
+      "band_id": "n71",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 2,
+          "mean": 4.57065090300454,
+          "ci_low": -15.229389757463629,
+          "ci_high": 24.37069156347271,
+          "sd": 2.203800254806613
+        },
+        "path_loss_db": {
+          "n": 2,
+          "mean": 70.53874176399584,
+          "ci_low": 70.53874176399584,
+          "ci_high": 70.53874176399584,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 2,
+          "mean": 3.404855501735137,
+          "ci_low": 3.404855501735137,
+          "ci_high": 3.404855501735137,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 2,
+          "mean": 6.415427817359658,
+          "ci_low": -17.91328847841794,
+          "ci_high": 30.74414411313726,
+          "sd": 2.7078545994503394
+        }
+      },
+      "seeds": [
+        200,
+        201
+      ]
+    }
+  },
+  "fspl_gap_vs_28ghz_db": 17.46253527229001,
+  "uma_pl_35m_n77_db": 85.36280452776315,
+  "uma_pl_35m_n257_db": 102.82533980005316,
+  "doppler_22mps_n77_hz": 275.19037853847544,
+  "doppler_22mps_n257_hz": 2054.7548264206166,
+  "never": "28 GHz as Sub-6; FR2 relabel; OTA",
+  "fr2_heldout_carrier_hz": 28000000000,
+  "distinct_from_fr2_carrier": true,
+  "fr2_experiment_id": null
+}

@@ -1,0 +1,88 @@
+# Paper II Sub-6 / FR1 digital experiment protocol (FROZEN before held-out generation)
+# Companion PHY evidence for Paper II (ReadyGary). Not a fourth dissertation paper.
+# Evidence class: SYNTHETIC_SIM. latency_class: HOST_PROCESS_TIMING.
+# Primary carrier is n77 3750 MHz FR1, TRUE below 6 GHz. NEVER 28 GHz.
+# Sub-6 results must not reuse FR2 numbers.
+
+paper: II
+experiment_id: rq2_sub6_fr1_n77
+title: Sub-6 FR1 service-continuity PHY companion (n77 C-band)
+evidence_class: SYNTHETIC_SIM
+latency_class: HOST_PROCESS_TIMING
+sub_ms_inference_proven: false
+sub_ms_inference_target: true
+frozen: true
+frozen_date: "2026-08-18"
+
+carrier:
+  frequency_hz: 3750000000
+  band: FR1
+  family: SUB6
+  band_id: n77
+  profile_id: n77_us_cband
+  below_6ghz: true
+  label: Sub-6
+  never: 28 GHz as Sub-6
+  citation: 3GPP TS 38.101-1
+  scs_khz: 30
+  bandwidth_hz: 100000000
+  duplex: TDD
+
+supporting_profiles:
+  - n41_us_2500
+  - n71_us_600
+
+hypotheses:
+  H1: >
+    On held-out Sub-6 TDL draws, Type-I CSI ranking mean SNR is finite and
+    distinct from the frozen FR2 28 GHz held-out table (carrier_hz differs).
+  H2: >
+    UMa-NLOS path loss at 3.75 GHz is lower than the same geometry at 28 GHz
+    by approximately 20*log10(28/3.75) dB in the FSPL term (digital check).
+  H0_to_reject: Sub-6 JSON is a relabel of FR2 28 GHz results.
+
+split:
+  train_family: in_distribution
+  held_out_family: held_out
+  domain_shift_families:
+    - high_blockage
+    - high_mobility
+    - indoor
+    - cell_edge
+    - congestion
+  train_seeds: [0, 1, 2]
+  held_out_seeds: [200, 201, 202]
+  n_episodes_per_seed: 8
+  n_slots_per_episode: 6
+
+channel:
+  num_tx_ant: 4
+  num_rx_ant: 4
+  num_tx_beams: 8
+  num_rx_beams: 8
+  backend: sub6_tdl_a
+  scenario: uma
+  distance_m: 35.0
+  cell_edge_distance_m: 180.0
+  velocity_mps: 1.5
+  high_velocity_mps: 22.0
+  not_claimed: calibrated TR 38.901 site geometry or OTA
+
+policies:
+  - type1_csi
+  - cell_rsrp
+  - exhaustive_small
+
+metrics:
+  primary: mean_snr_db
+  secondary:
+    - path_loss_db
+    - doppler_hz
+    - min_useful_service
+
+statistics:
+  ci_level: 0.95
+  ci_method: student_t_over_seed_means
+
+held_out_rule: >
+  Held-out JSON must not be generated until this protocol file exists.

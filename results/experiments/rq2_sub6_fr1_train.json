@@ -1,0 +1,76 @@
+{
+  "experiment_id": "rq2_sub6_fr1_n77",
+  "heldout": false,
+  "evidence_class": "SYNTHETIC_SIM",
+  "latency_class": "HOST_PROCESS_TIMING",
+  "sub_ms_inference_proven": false,
+  "primary_profile": "n77_us_cband",
+  "carrier": {
+    "frequency_hz": 3750000000,
+    "band": "FR1",
+    "family": "SUB6",
+    "band_id": "n77",
+    "profile_id": "n77_us_cband",
+    "below_6ghz": true,
+    "label": "Sub-6",
+    "never": "28 GHz as Sub-6",
+    "citation": "3GPP TS 38.101-1",
+    "scs_khz": 30,
+    "bandwidth_hz": 100000000,
+    "duplex": "TDD"
+  },
+  "families": {
+    "in_distribution": {
+      "family": "in_distribution",
+      "carrier_hz": 3750000000,
+      "band_id": "n77",
+      "below_6ghz": true,
+      "evidence_class": "SYNTHETIC_SIM",
+      "metrics": {
+        "snr_exhaustive_db": {
+          "n": 3,
+          "mean": 1.572614575092345,
+          "ci_low": -0.20193560178818948,
+          "ci_high": 3.3471647519728798,
+          "sd": 0.7142949260835286
+        },
+        "path_loss_db": {
+          "n": 3,
+          "mean": 85.36280452776315,
+          "ci_low": 85.36280452776315,
+          "ci_high": 85.36280452776315,
+          "sd": 0.0
+        },
+        "doppler_hz": {
+          "n": 3,
+          "mean": 18.762980354896055,
+          "ci_low": 18.762980354896055,
+          "ci_high": 18.762980354896055,
+          "sd": 0.0
+        },
+        "csi_score": {
+          "n": 3,
+          "mean": 3.898614726278497,
+          "ci_low": 1.4876939102057882,
+          "ci_high": 6.309535542351206,
+          "sd": 0.970447907614072
+        }
+      },
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "supporting": {},
+  "fspl_gap_vs_28ghz_db": 17.46253527229001,
+  "uma_pl_35m_n77_db": 85.36280452776315,
+  "uma_pl_35m_n257_db": 102.82533980005316,
+  "doppler_22mps_n77_hz": 275.19037853847544,
+  "doppler_22mps_n257_hz": 2054.7548264206166,
+  "never": "28 GHz as Sub-6; FR2 relabel; OTA",
+  "fr2_heldout_carrier_hz": 28000000000,
+  "distinct_from_fr2_carrier": true,
+  "fr2_experiment_id": null
+}

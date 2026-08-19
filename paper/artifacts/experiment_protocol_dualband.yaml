@@ -1,0 +1,85 @@
+# Paper II dual-band continuity protocol (FROZEN before held-out generation)
+# SUB6 / FR2 / DUAL_BAND comparisons. Not a fourth dissertation paper.
+# Evidence: SYNTHETIC_SIM. Not OTA. 28 GHz remains FR2.
+
+paper: II
+experiment_id: rq2_dualband_continuity
+title: Dual-band min-useful service continuity (Sub-6 n77 + FR2 n257)
+evidence_class: SYNTHETIC_SIM
+latency_class: HOST_PROCESS_TIMING
+sub_ms_inference_proven: false
+sub_ms_inference_target: true
+frozen: true
+frozen_date: "2026-08-18"
+
+carriers:
+  sub6:
+    frequency_hz: 3750000000
+    band: FR1
+    family: SUB6
+    band_id: n77
+    profile_id: n77_us_cband
+    below_6ghz: true
+  fr2:
+    frequency_hz: 28000000000
+    band: FR2
+    family: FR2
+    band_id: n257
+    profile_id: n257_28ghz
+    below_6ghz: false
+    never: Sub-6
+
+policies:
+  - SUB6_ONLY
+  - FR2_ONLY
+  - STATIC_PREFERRED
+  - SIGNAL_POLICY
+  - SERVICE_AWARE_POLICY
+  - DIGITAL_TWIN_POLICY
+  - OPTIMIZATION_REFERENCE
+  - LEARNED_POLICY
+
+failure_families:
+  - fr2_blockage
+  - sub6_congestion
+  - cell_edge
+  - mobility
+  - indoor
+  - backhaul
+  - compute_unavailability
+  - load_spike
+  - simultaneous
+  - recovery
+
+device_classes:
+  - student_14_5
+  - handheld_hybrid
+  - ds_xl_coder
+  - edge_io_rings
+
+workloads:
+  - lecture_video
+  - interactive_tutor
+  - cloud_ide
+  - background_sync
+  - emergency_text
+
+split:
+  seeds: [0, 1, 2, 3, 4]
+  held_out_seeds: [300, 301, 302]
+  n_slots: 8
+
+metrics:
+  primary: min_useful_service_rate
+  secondary:
+    - interruption_ms
+    - switch_rate
+    - outage_rate
+    - energy_proxy
+
+statistics:
+  ci_level: 0.95
+  ci_method: student_t_over_seed_means
+
+held_out_rule: >
+  Held-out JSON must not be generated until this protocol file exists.
