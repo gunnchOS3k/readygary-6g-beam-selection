@@ -31,6 +31,10 @@ def fmt(x: object, nd: int = 4) -> str:
     return str(x)
 
 
+def tex_escape(text: object) -> str:
+    return str(text).replace("_", "\\_")
+
+
 def write_policy_table(src: Path, stem: str, caption: str) -> None:
     tex = TABLES / f"{stem}.tex"
     md = TABLES / f"{stem}.md"
@@ -79,8 +83,9 @@ def write_policy_table(src: Path, stem: str, caption: str) -> None:
         md_lines.append(
             f"| `{r['policy']}` | {ci} | {fmt(r['db_loss_vs_oracle'])} | {fmt(r['top1_match_oracle'])} | {fmt(r['n_beam_switches'])} | {fmt(r['compute_time_ms'])} | {fmt(r['cohens_d_vs_no_adaptation'])} |"
         )
+        policy_tex = tex_escape(r["policy"])
         tex_rows.append(
-            f"{r['policy'].replace('_', '\\_')} & {fmt(r['snr_db_mean'])} & {fmt(r['snr_db_ci_low'])} & {fmt(r['snr_db_ci_high'])} & {fmt(r['db_loss_vs_oracle'])} & {fmt(r['top1_match_oracle'])} & {fmt(r['n_beam_switches'])} & {fmt(r['compute_time_ms'])} & {fmt(r['cohens_d_vs_no_adaptation'])} \\\\"
+            f"{policy_tex} & {fmt(r['snr_db_mean'])} & {fmt(r['snr_db_ci_low'])} & {fmt(r['snr_db_ci_high'])} & {fmt(r['db_loss_vs_oracle'])} & {fmt(r['top1_match_oracle'])} & {fmt(r['n_beam_switches'])} & {fmt(r['compute_time_ms'])} & {fmt(r['cohens_d_vs_no_adaptation'])} \\\\"
         )
     md.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
     tex.write_text(
@@ -116,8 +121,10 @@ def write_shift() -> None:
     tex_rows = []
     for r in rows:
         md_lines.append(f"| `{r['family']}` | `{r['policy']}` | {fmt(r['snr_db_mean'])} [{fmt(r['ci_low'])}, {fmt(r['ci_high'])}] |")
+        family_tex = tex_escape(r["family"])
+        policy_tex = tex_escape(r["policy"])
         tex_rows.append(
-            f"{str(r['family']).replace('_', '\\_')} & {str(r['policy']).replace('_', '\\_')} & {fmt(r['snr_db_mean'])} & {fmt(r['ci_low'])} & {fmt(r['ci_high'])} \\\\"
+            f"{family_tex} & {policy_tex} & {fmt(r['snr_db_mean'])} & {fmt(r['ci_low'])} & {fmt(r['ci_high'])} \\\\"
         )
     md.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
     tex.write_text(
@@ -153,8 +160,10 @@ def write_ablation() -> None:
     tex_rows = []
     for r in rows:
         md_lines.append(f"| `{r['ablation']}` | `{r['policy']}` | {fmt(r['snr_db_mean'])} [{fmt(r['ci_low'])}, {fmt(r['ci_high'])}] |")
+        ablation_tex = tex_escape(r["ablation"])
+        policy_tex = tex_escape(r["policy"])
         tex_rows.append(
-            f"{str(r['ablation']).replace('_', '\\_')} & {str(r['policy']).replace('_', '\\_')} & {fmt(r['snr_db_mean'])} & {fmt(r['ci_low'])} & {fmt(r['ci_high'])} \\\\"
+            f"{ablation_tex} & {policy_tex} & {fmt(r['snr_db_mean'])} & {fmt(r['ci_low'])} & {fmt(r['ci_high'])} \\\\"
         )
     md.write_text("\n".join(md_lines) + "\n", encoding="utf-8")
     tex.write_text(
