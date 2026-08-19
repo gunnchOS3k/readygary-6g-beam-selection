@@ -1,4 +1,4 @@
-.PHONY: test benchmark-toy timing e2e smoke reproduce e2e-tooling paper paper-reproduce deploy-export additive
+.PHONY: test benchmark-toy timing e2e smoke reproduce e2e-tooling paper paper-reproduce deploy-export additive sub6-reproduce dualband-reproduce firewall
 
 PY := $(if $(wildcard .venv/bin/python),.venv/bin/python,python3)
 
@@ -13,8 +13,10 @@ timing:
 
 deploy-export:
 	PYTHONPATH=. $(PY) deploy/onnx_export.py
+	PYTHONPATH=. $(PY) deploy/onnx_validate.py
 	PYTHONPATH=. $(PY) deploy/tensorrt_compile.py
 	PYTHONPATH=. $(PY) -c "from deploy.grpc_servicer import write_artifact; from pathlib import Path; write_artifact(Path('.'))"
+	PYTHONPATH=src:. $(PY) -c "from readygary_tool_adapters.nvidia_probe import write; write()"
 
 additive:
 	@test -f paper/artifacts/experiment_protocol_additive.yaml
@@ -22,16 +24,40 @@ additive:
 	PYTHONPATH=. $(PY) scripts/run_additive_programme.py --heldout
 	$(PY) paper/scripts/generate_tables.py
 
-reproduce: test benchmark-toy timing deploy-export
+firewall:
+	PYTHONPATH=. $(PY) scripts/check_band_firewall.py
+	PYTHONPATH=. $(PY) scripts/check_readme_claims.py
+
+sub6-reproduce: firewall
+	@test -f paper/artifacts/experiment_protocol_sub6.yaml
+	PYTHONPATH=. $(PY) scripts/run_sub6_programme.py
+	PYTHONPATH=. $(PY) scripts/run_sub6_programme.py --heldout
+	$(PY) paper/scripts/generate_tables.py
+	@test -f results/experiments/rq2_sub6_fr1_heldout.json
+	@python3 -c "import json; d=json.load(open('results/experiments/rq2_sub6_fr1_heldout.json')); assert d['carrier']['frequency_hz']==3750000000; assert d['carrier']['frequency_hz']!=28000000000"
+
+dualband-reproduce: firewall
+	@test -f paper/artifacts/experiment_protocol_dualband.yaml
+	PYTHONPATH=. $(PY) scripts/run_dualband_programme.py
+	PYTHONPATH=. $(PY) scripts/run_dualband_programme.py --heldout
+	$(PY) paper/scripts/generate_tables.py
+	@test -f results/experiments/rq2_dualband_heldout.json
+
+reproduce: test benchmark-toy timing deploy-export firewall
 
 paper-reproduce:
 	@test -f paper/artifacts/experiment_protocol.yaml
 	@test -f paper/artifacts/experiment_protocol_additive.yaml
+	@test -f paper/artifacts/experiment_protocol_sub6.yaml
+	@test -f paper/artifacts/experiment_protocol_dualband.yaml
 	$(PY) scripts/run_benchmark_table.py --toy
 	PYTHONPATH=. $(PY) scripts/run_timing_harness.py
 	PYTHONPATH=. $(PY) scripts/run_paper_ii_heldout.py
 	PYTHONPATH=. $(PY) scripts/run_additive_programme.py --heldout
+	PYTHONPATH=. $(PY) scripts/run_sub6_programme.py --heldout
+	PYTHONPATH=. $(PY) scripts/run_dualband_programme.py --heldout
 	$(PY) paper/scripts/generate_tables.py
+	PYTHONPATH=. $(PY) scripts/check_band_firewall.py
 
 paper: paper-reproduce
 	@test -f paper/manuscript.tex

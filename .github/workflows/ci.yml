@@ -11,9 +11,13 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install minimal test deps
-        run: python3 -m pip install pytest numpy pyyaml matplotlib
+        run: python3 -m pip install pytest numpy pyyaml matplotlib onnx onnxruntime
       - name: make reproduce
         run: make reproduce
+      - name: Sub-6 / dual-band / firewall
+        run: |
+          make sub6-reproduce
+          make dualband-reproduce
       - name: Supervisor-ready files
         run: |
           test -f LICENSE
@@ -21,5 +25,13 @@ jobs:
           test -f REPRODUCIBILITY.md
           test -f docs/uml/README.md
           test -f docs/packets/EXTERNAL_REPRODUCTION_PACKET.md
+          test -f docs/engineering/PREEXISTING_WORK_INVENTORY.md
+          test -f paper/artifacts/experiment_protocol_sub6.yaml
+          test -f paper/artifacts/experiment_protocol_dualband.yaml
           test -f results/benchmark_table.md
+          test -f results/experiments/rq2_sub6_fr1_heldout.json
+          test -f results/experiments/rq2_dualband_heldout.json
           python3 -c "import json; d=json.load(open('results/e2e/benchmark_metrics.json')); assert d['evidence_class']=='SYNTHETIC_SIM'; assert d['sub_ms_inference_proven'] is False"
+          python3 -c "import json; d=json.load(open('results/experiments/rq2_sub6_fr1_heldout.json')); assert d['carrier']['frequency_hz']==3750000000; assert d['carrier']['family']=='SUB6'"
+          python3 scripts/check_band_firewall.py
+          python3 scripts/check_readme_claims.py
