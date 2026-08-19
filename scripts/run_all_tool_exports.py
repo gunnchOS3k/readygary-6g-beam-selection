@@ -11,6 +11,7 @@ from readygary_tool_adapters import (  # noqa: E402
     aodt_adapter,
     benchmark_dataset_registry,
     deepmimo_adapter,
+    nvidia_probe,
     sionna_channel_adapter,
     tensorrt_adapter,
 )
@@ -22,6 +23,7 @@ benchmark_dataset_registry.write_registry()
 aerial_adapter.write()
 aodt_adapter.write()
 tensorrt_adapter.write()
+nvidia_probe.write()
 Path("results/tool_exports").mkdir(parents=True, exist_ok=True)
 Path("results/tool_exports/channel_backends.json").write_text(
     json.dumps(availability_report(), indent=2) + "\n", encoding="utf-8"

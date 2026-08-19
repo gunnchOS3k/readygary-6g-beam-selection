@@ -34,8 +34,14 @@ def health_payload() -> dict:
         "tensorrt": trt["status"],
         "band": "FR2",
         "carrier_hz": 28_000_000_000,
+        "scorer_family": "FR2",
+        "sub6_primary": "n77_us_cband",
+        "fr2_profile": "n257_28ghz",
+        "families": ["FR2", "SUB6"],
+        "evidence_class": "SYNTHETIC_SIM",
         "sub_ms_inference_proven": False,
         "sub_ms_inference_target": True,
+        "never": "28 GHz as Sub-6",
     }
 
 
@@ -47,6 +53,11 @@ def metadata_payload() -> dict:
         meta = json.loads(meta_path.read_text(encoding="utf-8"))
     meta["tensorrt"] = trt
     meta["observability"] = {"infer_count": INFER_COUNT}
+    meta.setdefault("band", "FR2")
+    meta["families"] = ["FR2", "SUB6"]
+    meta["sub6_primary"] = "n77_us_cband"
+    meta["evidence_class"] = meta.get("evidence_class") or "SYNTHETIC_SIM"
+    meta["sub_ms_inference_proven"] = False
     return meta
 
 
@@ -117,6 +128,26 @@ def build_fastapi():
 
         return PlainTextResponse(metrics_text())
 
+    @app.get("/bands")
+    def bands():
+        from sim.bands import load_all_profiles
+
+        return {"profiles": {k: v.as_dict() for k, v in load_all_profiles().items()}, "evidence_class": "IMPLEMENTED_TODAY"}
+
+    @app.post("/decide")
+    def decide_api(body: dict):
+        from sim.access.radio_decision import RadioDecisionContext
+        from sim.dualband.controller import decide as dual_decide
+
+        ctx = RadioDecisionContext(
+            device_class=str(body.get("device_class", "student_14_5")),
+            workload=str(body.get("workload", "lecture_video")),
+            available_families=list(body.get("available_families") or ["SUB6", "FR2"]),
+            measurements=dict(body.get("measurements") or {}),
+            seed=int(body.get("seed") or 0),
+        )
+        return dual_decide(str(body.get("policy", "SERVICE_AWARE_POLICY")), ctx).as_dict()
+
     @app.post("/infer")
     def infer(body: InferIn):
         return infer_payload(body.model_dump())
@@ -153,6 +184,12 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/metadata":
             self._json(200, metadata_payload())
             return
+        if path == "/bands":
+            from sim.bands import load_all_profiles
+
+            payload = {k: v.as_dict() for k, v in load_all_profiles().items()}
+            self._json(200, {"profiles": payload, "evidence_class": "IMPLEMENTED_TODAY"})
+            return
         if path == "/metrics":
             raw = metrics_text().encode("utf-8")
             self.send_response(200)
@@ -169,6 +206,20 @@ class Handler(BaseHTTPRequestHandler):
         body = json.loads(self.rfile.read(length) or b"{}")
         if path == "/infer":
             self._json(200, infer_payload(body))
+            return
+        if path == "/decide":
+            from sim.access.radio_decision import RadioDecisionContext
+            from sim.dualband.controller import decide as dual_decide
+
+            ctx = RadioDecisionContext(
+                device_class=str(body.get("device_class", "student_14_5")),
+                workload=str(body.get("workload", "lecture_video")),
+                available_families=list(body.get("available_families") or ["SUB6", "FR2"]),
+                measurements=dict(body.get("measurements") or {}),
+                seed=int(body.get("seed") or 0),
+            )
+            pol = str(body.get("policy", "SERVICE_AWARE_POLICY"))
+            self._json(200, dual_decide(pol, ctx).as_dict())
             return
         if path == "/benchmark":
             import numpy as np

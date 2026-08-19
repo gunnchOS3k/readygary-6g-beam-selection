@@ -1,0 +1,21 @@
+{
+  "export": {
+    "onnx_written": true,
+    "onnx_path": "/Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/deploy/artifacts/tiny_beam_scorer.onnx",
+    "blocker": null
+  },
+  "checker": {
+    "ran": true,
+    "ok": true
+  },
+  "ort": {
+    "ort_ran": true,
+    "equivalent": true,
+    "max_abs_err": 5.960464477539063e-08,
+    "blocker": null,
+    "latency_class": "HOST_PROCESS_TIMING",
+    "sub_ms_inference_proven": false
+  },
+  "evidence_class": "SYNTHETIC_SIM",
+  "sub_ms_inference_proven": false
+}

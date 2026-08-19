@@ -1,0 +1,72 @@
+{
+  "evidence_class": "SYNTHETIC_SIM",
+  "credentials_committed": false,
+  "silent_fake_forbidden": true,
+  "owner_login_required": true,
+  "gpu": false,
+  "backends": {
+    "numpy": {
+      "status": "IMPLEMENTED_AND_EXECUTED",
+      "open_path": true
+    },
+    "pytorch": {
+      "status": "BLOCKED_EXTERNAL",
+      "present": false,
+      "error": "ModuleNotFoundError: No module named 'torch'",
+      "open_path": true,
+      "note": "LSTM tracker exists; dual-band sequential policy is numpy REINFORCE"
+    },
+    "sionna": {
+      "status": "BLOCKED_EXTERNAL",
+      "present": false,
+      "error": "ModuleNotFoundError: No module named 'sionna'",
+      "open_path": false
+    },
+    "sionna_rt": {
+      "status": "BLOCKED_EXTERNAL",
+      "present": false,
+      "scene": false,
+      "open_path": false
+    },
+    "aodt": {
+      "status": "BLOCKED_MEMBER_ACCESS",
+      "present": false,
+      "error": "ModuleNotFoundError: No module named 'aodt'",
+      "open_path": false
+    },
+    "aerial_pyaerial": {
+      "status": "BLOCKED_MEMBER_ACCESS",
+      "aerial": {
+        "present": false,
+        "error": "ModuleNotFoundError: No module named 'aerial'"
+      },
+      "pyaerial": {
+        "present": false,
+        "error": "ModuleNotFoundError: No module named 'pyaerial'"
+      },
+      "open_path": false,
+      "credentials_committed": false
+    },
+    "onnx": {
+      "status": "IMPLEMENTED_AND_EXECUTED",
+      "present": true,
+      "error": null,
+      "open_path": true
+    },
+    "onnxruntime": {
+      "status": "IMPLEMENTED_AND_EXECUTED",
+      "present": true,
+      "error": null,
+      "open_path": true
+    },
+    "tensorrt": {
+      "status": "BLOCKED_GPU",
+      "present": false,
+      "gpu": false,
+      "error": "ModuleNotFoundError: No module named 'tensorrt'",
+      "open_path": false,
+      "tensorrt_code_complete": true,
+      "tensorrt_gpu_execution": "BLOCKED_GPU"
+    }
+  }
+}
