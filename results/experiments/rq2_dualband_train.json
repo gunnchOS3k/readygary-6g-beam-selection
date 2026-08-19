@@ -1,0 +1,3796 @@
+{
+  "experiment_id": "rq2_dualband_continuity",
+  "heldout": false,
+  "evidence_class": "SYNTHETIC_SIM",
+  "latency_class": "HOST_PROCESS_TIMING",
+  "sub_ms_inference_proven": false,
+  "carriers": {
+    "sub6": {
+      "frequency_hz": 3750000000,
+      "band": "FR1",
+      "family": "SUB6",
+      "band_id": "n77",
+      "profile_id": "n77_us_cband",
+      "below_6ghz": true
+    },
+    "fr2": {
+      "frequency_hz": 28000000000,
+      "band": "FR2",
+      "family": "FR2",
+      "band_id": "n257",
+      "profile_id": "n257_28ghz",
+      "below_6ghz": false,
+      "never": "Sub-6"
+    }
+  },
+  "rows": [
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SUB6_ONLY",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 8.0,
+        "ci_low": 8.0,
+        "ci_high": 8.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 8.0,
+        "ci_low": 8.0,
+        "ci_high": 8.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 8.0,
+        "ci_low": 8.0,
+        "ci_high": 8.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "FR2_ONLY",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "STATIC_PREFERRED",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.375,
+        "ci_low": 0.06445772395963001,
+        "ci_high": 0.68554227604037,
+        "sd": 0.125
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 30.333333333333332,
+        "ci_low": 5.489304295452428,
+        "ci_high": 55.17736237121424,
+        "sd": 10.000260413275914
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.375,
+        "ci_low": 0.06445772395963001,
+        "ci_high": 0.68554227604037,
+        "sd": 0.125
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 30.333333333333332,
+        "ci_low": 5.489304295452428,
+        "ci_high": 55.17736237121424,
+        "sd": 10.000260413275914
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.375,
+        "ci_low": 0.06445772395963001,
+        "ci_high": 0.68554227604037,
+        "sd": 0.125
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 30.333333333333332,
+        "ci_low": 5.489304295452428,
+        "ci_high": 55.17736237121424,
+        "sd": 10.000260413275914
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SIGNAL_POLICY",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "DIGITAL_TWIN_POLICY",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "OPTIMIZATION_REFERENCE",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "fr2_blockage",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "sub6_congestion",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.9583333333333334,
+        "ci_low": 0.7790416666666666,
+        "ci_high": 1.137625,
+        "sd": 0.07216878364870323
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.08333333333333333,
+        "ci_low": -0.27525000000000005,
+        "ci_high": 0.4419166666666667,
+        "sd": 0.14433756729740646
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 7.625,
+        "ci_low": -20.882375,
+        "ci_high": 36.132374999999996,
+        "sd": 11.474836600143812
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.041666666666666664,
+        "ci_low": -0.13762500000000003,
+        "ci_high": 0.22095833333333334,
+        "sd": 0.07216878364870323
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "cell_edge",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "mobility",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "indoor",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "backhaul",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "compute_unavailability",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "load_spike",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "LEARNED_POLICY",
+      "failure": "recovery",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "student_14_5",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "student_14_5",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "handheld_hybrid",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "handheld_hybrid",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "handheld_hybrid",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "handheld_hybrid",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "ds_xl_coder",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "ds_xl_coder",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "ds_xl_coder",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "ci_low": 1.0,
+        "ci_high": 1.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "ds_xl_coder",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "edge_io_rings",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "edge_io_rings",
+      "workload": "lecture_video",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "nominal",
+      "device": "edge_io_rings",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    },
+    {
+      "policy": "SERVICE_AWARE_POLICY",
+      "failure": "simultaneous",
+      "device": "edge_io_rings",
+      "workload": "interactive_tutor",
+      "min_useful_service_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "switch_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "interruption_ms": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "outage_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "sd": 0.0
+      },
+      "evidence_class": "SYNTHETIC_SIM",
+      "rf_measured": false
+    }
+  ],
+  "gnn_audit": {
+    "sim.models.gnn_multi_bs": "HEURISTIC_MESSAGE_PASSING",
+    "sim.models.gnn_trainable": "TRAINED_GRAPH_MODEL",
+    "note": "Heuristic averages neighbor DFT bins. TrainableGNN has SGD weights."
+  },
+  "rl_audit": {
+    "adaptive_constrained_rl": "TABULAR_Q",
+    "adaptive_bandit": "EPSILON_GREEDY_BANDIT",
+    "sequential_band_policy": "REINFORCE_SEQUENTIAL",
+    "note": "Tabular Q is a valid FR2 beam baseline. Sequential policy acts on stay/switch over time."
+  },
+  "gnn_trained": {
+    "mean_snr_linear": 3.159899741225747,
+    "mean_snr_db": 4.996733033389193,
+    "model": "trainable_graphsage_numpy",
+    "class": "TRAINED_GRAPH_MODEL",
+    "heuristic_gnn_class": "HEURISTIC_MESSAGE_PASSING"
+  },
+  "sequential_policy_weights_shape": [
+    6,
+    4
+  ],
+  "negative_results_valid": true,
+  "never": "28 GHz as Sub-6; fabricated RF; Sionna as OTA"
+}

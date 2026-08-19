@@ -5,12 +5,17 @@
   "n_out": 8,
   "carrier_hz": 28000000000,
   "band": "FR2",
-  "never": "Sub-6",
+  "never": "Sub-6 for this FR2 8x8 scorer",
+  "families": [
+    "FR2",
+    "SUB6"
+  ],
+  "sub6_primary": "n77_us_cband",
   "npz": "deploy/artifacts/tiny_beam_scorer.npz",
   "onnx": {
-    "onnx_written": false,
+    "onnx_written": true,
     "onnx_path": "/Users/gunnchos/Downloads/gunnchos-7gc-research-product-spine/repos/readygary-6g-beam-selection/deploy/artifacts/tiny_beam_scorer.onnx",
-    "blocker": "ONNX_EXPORT_BLOCKED_OPTIONAL_DEP: ModuleNotFoundError"
+    "blocker": null
   },
   "sub_ms_inference_proven": false,
   "sub_ms_inference_target": true,

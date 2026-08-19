@@ -206,7 +206,8 @@ def write_figures() -> None:
     plt.close(fig)
     banner.write_text(
         "Figures generated from `results/experiments/*.json`.\n\n"
-        f"- `{png.name}`: held-out SNR means with 95% t CIs. 28 GHz FR2. Not measured RF.\n",
+        f"- `{png.name}`: held-out SNR means with 95% t CIs. 28 GHz FR2. Not measured RF.\n"
+        "- `rq2_sub6_pathloss.png`: digital UMa-NLOS path loss at 35 m for n71/n41/n77 vs n257. Not OTA.\n",
         encoding="utf-8",
     )
     print("wrote", png)
@@ -274,6 +275,141 @@ def write_additive() -> None:
     print("wrote", md)
 
 
+def write_sub6() -> None:
+    src = EXP / "rq2_sub6_fr1_heldout.json"
+    if not src.exists():
+        src = EXP / "rq2_sub6_fr1_train.json"
+    md = TABLES / "rq2_sub6.md"
+    tex = TABLES / "rq2_sub6.tex"
+    if not src.exists():
+        pending(tex, "Missing Sub-6 JSON.")
+        md.write_text("**RESULT_PENDING.** Missing Sub-6 JSON. Do not conclude.\n", encoding="utf-8")
+        return
+    data = json.loads(src.read_text(encoding="utf-8"))
+    lines = [
+        "# rq2_sub6 (SYNTHETIC_SIM, HOST_PROCESS_TIMING, n77 3.75 GHz FR1, NEVER 28 GHz)",
+        "",
+        f"carrier_hz={data.get('carrier', {}).get('frequency_hz')} profile={data.get('primary_profile')}. Not OTA.",
+        "",
+        f"FSPL gap vs 28 GHz (digital): {data.get('fspl_gap_vs_28ghz_db')} dB. "
+        f"UMa-NLOS 35 m n77={data.get('uma_pl_35m_n77_db')} dB vs n257={data.get('uma_pl_35m_n257_db')} dB.",
+        "",
+        "| family | SNR dB mean [95% CI] | path loss dB | Doppler Hz | carrier_hz |",
+        "|---|---|---|---|---|",
+    ]
+    for fam, block in (data.get("families") or {}).items():
+        m = block.get("metrics") or {}
+        snr = m.get("snr_exhaustive_db") or {}
+        pl = m.get("path_loss_db") or {}
+        fd = m.get("doppler_hz") or {}
+        lines.append(
+            f"| `{fam}` | {fmt(snr.get('mean'))} [{fmt(snr.get('ci_low'))}, {fmt(snr.get('ci_high'))}] | "
+            f"{fmt(pl.get('mean'))} | {fmt(fd.get('mean'))} | {block.get('carrier_hz')} |"
+        )
+    lines += ["", "## Supporting true-below-6 GHz profiles", "", "| profile | carrier_hz | SNR dB |", "|---|---|---|"]
+    for pid, block in (data.get("supporting") or {}).items():
+        snr = ((block.get("metrics") or {}).get("snr_exhaustive_db") or {})
+        lines.append(f"| `{pid}` | {block.get('carrier_hz')} | {fmt(snr.get('mean'))} |")
+    md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    tex.write_text(
+        "\\textbf{Sub-6 n77 digital results (SYNTHETIC\\_SIM).} Not 28 GHz. Not OTA.\n",
+        encoding="utf-8",
+    )
+    try:
+        import matplotlib
+
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        from sim.channels.sub6 import uma_nlos_pathloss_db
+
+        fig, ax = plt.subplots(figsize=(6.2, 3.6))
+        names = ["n71", "n41", "n77", "n257 FR2"]
+        pls = [
+            uma_nlos_pathloss_db(35.0, 0.6805e9),
+            uma_nlos_pathloss_db(35.0, 2.593e9),
+            float(data.get("uma_pl_35m_n77_db")),
+            float(data.get("uma_pl_35m_n257_db")),
+        ]
+        ax.bar(names, pls, color=["#4C78A8", "#4C78A8", "#4C78A8", "#F58518"])
+        ax.set_ylabel("UMa-NLOS PL at 35 m (dB)")
+        ax.set_title("Digital path loss vs carrier (TR 38.901 UMa-NLOS; not OTA)")
+        ax.grid(True, axis="y", alpha=0.3)
+        fig.tight_layout()
+        fig.savefig(FIGS / "rq2_sub6_pathloss.png", dpi=150)
+        plt.close(fig)
+    except Exception:
+        pass
+    print("wrote", md)
+
+
+def write_dualband() -> None:
+    src = EXP / "rq2_dualband_heldout.json"
+    if not src.exists():
+        src = EXP / "rq2_dualband_train.json"
+    md = TABLES / "rq2_dualband.md"
+    tex = TABLES / "rq2_dualband.tex"
+    csv_path = TABLES / "rq2_dualband.csv"
+    if not src.exists():
+        pending(tex, "Missing dual-band JSON.")
+        md.write_text("**RESULT_PENDING.** Missing dual-band JSON. Do not conclude.\n", encoding="utf-8")
+        return
+    data = json.loads(src.read_text(encoding="utf-8"))
+    rows = []
+    for row in data.get("rows") or []:
+        u = row.get("min_useful_service_rate") or {}
+        rows.append(
+            {
+                "policy": row.get("policy"),
+                "failure": row.get("failure"),
+                "device": row.get("device"),
+                "workload": row.get("workload"),
+                "min_useful_mean": u.get("mean"),
+                "min_useful_ci_low": u.get("ci_low"),
+                "min_useful_ci_high": u.get("ci_high"),
+                "switch_rate": (row.get("switch_rate") or {}).get("mean"),
+                "interruption_ms": (row.get("interruption_ms") or {}).get("mean"),
+                "outage_rate": (row.get("outage_rate") or {}).get("mean"),
+            }
+        )
+    with csv_path.open("w", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()) if rows else ["policy"])
+        w.writeheader()
+        w.writerows(rows)
+    lines = [
+        "# rq2_dualband (SYNTHETIC_SIM, min-useful service, n77 + n257)",
+        "",
+        "28 GHz remains FR2. Sub-6 is n77 3.75 GHz. Not OTA. Negative results valid.",
+        "",
+        "| policy | failure | device | workload | min-useful mean [95% CI] | switch | interrupt_ms | outage |",
+        "|---|---|---|---|---|---|---|---|",
+    ]
+    for r in rows:
+        ci = f"{fmt(r['min_useful_mean'])} [{fmt(r['min_useful_ci_low'])}, {fmt(r['min_useful_ci_high'])}]"
+        lines.append(
+            f"| `{r['policy']}` | `{r['failure']}` | `{r['device']}` | `{r['workload']}` | {ci} | "
+            f"{fmt(r['switch_rate'])} | {fmt(r['interruption_ms'])} | {fmt(r['outage_rate'])} |"
+        )
+    gnn = data.get("gnn_audit") or {}
+    rl = data.get("rl_audit") or {}
+    lines += [
+        "",
+        "## GNN / RL audit",
+        "",
+        f"- heuristic GNN: `{gnn.get('sim.models.gnn_multi_bs')}`",
+        f"- trainable GNN: `{gnn.get('sim.models.gnn_trainable')}`",
+        f"- tabular RL: `{rl.get('adaptive_constrained_rl')}`",
+        f"- sequential: `{rl.get('sequential_band_policy')}`",
+        "",
+        f"Trained GNN SNR dB: {fmt((data.get('gnn_trained') or {}).get('mean_snr_db'))} (SYNTHETIC_SIM).",
+    ]
+    md.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    tex.write_text(
+        "\\textbf{Dual-band min-useful service (SYNTHETIC\\_SIM).} See \\texttt{paper/tables/rq2\\_dualband.md}.\n",
+        encoding="utf-8",
+    )
+    print("wrote", md)
+
+
 def main() -> int:
     write_policy_table(
         TRAIN,
@@ -289,6 +425,8 @@ def main() -> int:
     write_ablation()
     write_figures()
     write_additive()
+    write_sub6()
+    write_dualband()
     return 0
 
 

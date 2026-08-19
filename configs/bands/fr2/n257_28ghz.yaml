@@ -1,0 +1,49 @@
+# Existing ReadyGary FR2 control profile. 28 GHz is mmWave. NEVER Sub-6.
+profile_id: n257_28ghz
+band_id: n257
+family: FR2
+fr_designation: FR2
+below_6ghz: false
+primary_sub6: false
+fc_hz: 28000000000
+raster_fc_hz: 28000080000
+range_hz: [26500000000, 29500000000]
+duplex: TDD
+scs_khz: [60, 120]
+scs_khz_primary: 120
+bandwidth_hz_allowed: [50000000, 100000000, 200000000, 400000000]
+bandwidth_hz_primary: 100000000
+arfcn:
+  n_ref: 2079167
+  f_ref_hz: 28000080000
+  delta_f_global_hz: 60000
+  f_ref_offs_hz: 24250080000
+  n_ref_offs: 2016667
+  citation: 3GPP TS 38.104 Table 5.4.2.1-1 (FR2 24250.08-100000 MHz, 60 kHz raster). Experiment carrier remains 28000000000 to match frozen Paper II protocol.
+mimo:
+  dl: "8x8 analog DFT codebook (digital experiment)"
+  ul: "8x8 analog DFT codebook (digital experiment)"
+  note: Not RM520N-GL. That SKU is Sub-6 only. FR2 is a research/future-module path.
+modem_bom:
+  mpn: RM520N-GL
+  supported: false
+  source: Quectel RM520N Series Specification V1.4 — Sub-6 SKU, mmWave not this module
+  hardware_repo: gunnchos-hardware-industrial-design MODEM_RM520N_GL_PUBLIC_VERIFY.md
+  not_6g: true
+  not_ntn: true
+  not_fr2: true
+  fr2_path: TARGET_future_M2_module_swap
+regional_note: >
+  FR2 n257 26.5-29.5 GHz. Paper II existing 28 GHz TDL programme. Not a US
+  nationwide Sub-6 coverage layer. Not the gunnchOS BOM modem.
+experiment_family: FR2
+evidence:
+  class: IMPLEMENTED_TODAY
+  radio_measurement: SYNTHETIC_SIM
+  citations:
+    - 3GPP TS 38.101-2 (FR2)
+    - 3GPP TS 38.104 NR-ARFCN
+    - paper/artifacts/experiment_protocol.yaml frozen FR2 28 GHz
+never:
+  - calling 28 GHz Sub-6
+  - RM520N-GL FR2 claim

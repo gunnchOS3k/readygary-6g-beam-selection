@@ -18,12 +18,16 @@
 
 28 GHz is **FR2 mmWave** (3GPP TS 38.101-2), **never Sub-6**. Twin/sim ≠ OTA. `<1 ms` inference is a **TARGET**, not a measured fact.
 
+Primary **true below-6 GHz** profile is **n77 3.75 GHz FR1** (Quectel RM520N-GL BOM, US C-band / Gary scenario). FR2 28 GHz remains a separate experiment family. Not every FR1 band is below 6 GHz (n96 is documented as excluded).
+
 | Level | What it means here |
 |---|---|
-| **IMPLEMENTED TODAY** | Numpy FR2 TDL/CDL-structure channels; baselines; twin vs information-equivalent; GNN multi-BS + ablation; adaptive trackers (static/heuristic/opt/bandit/constrained RL); deploy scorer + HTTP `/health` `/metadata` `/metrics` `/infer` `/benchmark`; Docker; ONNX export *when `onnx` is installed*; timing stages pre/model/post/full with warmup, batch=1, p50/p95/p99 |
-| **VALIDATED TODAY** | `make test` + Paper II `SYNTHETIC_SIM` held-out tables (`HOST_PROCESS_TIMING`). Independent reproduction still pending. |
-| **TARGET** | Sub-ms edge inference; TensorRT engine; Sionna RT scene; AODT geometry; OTA/DeepMIMO measured RF |
+| **IMPLEMENTED TODAY** | Numpy FR2 TDL/CDL-structure channels; Sub-6 UMa/O2I/Doppler TDL path at n77/n41/n71; dual-band controller; Type-I CSI vs analog FR2 beams; baselines; twin vs information-equivalent; heuristic GNN + trainable graph scorer; adaptive trackers (static/heuristic/opt/bandit/tabular RL) + sequential REINFORCE; deploy scorer + HTTP `/health` `/metadata` `/metrics` `/infer` `/benchmark` `/bands` `/decide`; Docker; ONNX export *when `onnx` is installed*; ORT equivalence *when `onnxruntime` is installed*; timing stages pre/model/post/full with warmup, batch=1, p50/p95/p99 |
+| **VALIDATED TODAY** | `make test` + Paper II `SYNTHETIC_SIM` held-out tables (`HOST_PROCESS_TIMING`) for FR2, Sub-6, and dual-band. Independent reproduction still pending. |
+| **TARGET** | Sub-ms edge inference; TensorRT engine GPU run; Sionna RT scene; AODT geometry; OTA/DeepMIMO measured RF |
 | **ACTIVE ENGINEERING** | FastAPI/gRPC when extras installed; NVIDIA Aerial/pyAerial/Sionna/AODT/TensorRT/CUDA/Nsight adapters that fail closed without member-only software |
+
+Reproduce: `make reproduce` · `make sub6-reproduce` · `make dualband-reproduce` · `make paper-reproduce`. Inventory: [docs/engineering/PREEXISTING_WORK_INVENTORY.md](docs/engineering/PREEXISTING_WORK_INVENTORY.md). NVIDIA owner login: [docs/packets/OWNER_ACTION_NVIDIA_SUB6.md](docs/packets/OWNER_ACTION_NVIDIA_SUB6.md).
 
 Open NumPy/PyTorch path **must reproduce without NVIDIA membership**. Adapters are optional. Never commit NVIDIA credentials.
 

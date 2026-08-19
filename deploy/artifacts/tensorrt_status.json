@@ -1,6 +1,8 @@
 {
   "tensorrt_compiled": false,
   "status": "BLOCKED_GPU",
+  "tensorrt_code_complete": true,
+  "tensorrt_gpu_execution": "BLOCKED_GPU",
   "sub_ms_inference_proven": false,
   "sub_ms_inference_target": true,
   "latency_class": "HOST_PROCESS_TIMING",
