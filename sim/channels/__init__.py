@@ -1,9 +1,14 @@
-"""Pluggable FR2 channel backends. Open numpy path does not require NVIDIA software."""
+"""Pluggable channel backends. Open numpy path does not require NVIDIA software.
+
+FR2 backends keep their names. Sub-6 backends are separate experiment family
+members and refuse 28 GHz.
+"""
 from __future__ import annotations
 
 from sim.channels.aodt import AodtBackend
 from sim.channels.backend import ChannelDraw
 from sim.channels.sionna_rt import SionnaRtBackend
+from sim.channels.sub6 import register_sub6_backends
 from sim.channels.synthetic import SyntheticBackend
 from sim.channels.tdl_cdl import TdlCdlBackend
 
@@ -15,6 +20,7 @@ BACKENDS = {
     "sionna_rt": SionnaRtBackend(),
     "aodt": AodtBackend(),
 }
+BACKENDS.update(register_sub6_backends())
 
 
 def get_backend(name: str):

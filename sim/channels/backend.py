@@ -1,4 +1,4 @@
-"""Pluggable FR2 channel backends. Twin/sim ≠ OTA."""
+"""Pluggable channel backends (FR2 and Sub-6). Twin/sim ≠ OTA."""
 from __future__ import annotations
 
 from dataclasses import dataclass, field

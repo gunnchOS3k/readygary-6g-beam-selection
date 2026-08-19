@@ -1,9 +1,7 @@
-"""Parametric 3GPP TDL/CDL *structure* at 28 GHz FR2.
+"""Parametric 3GPP TDL/CDL *structure*. Carrier comes from the protocol.
 
-Evidence: SYNTHETIC_SIM. This is not a calibrated TR 38.901 geometry, not OTA,
-and not a claim that Sionna/Quadriga was used.
-Delay/power taps follow the public 3GPP TR 38.901 TDL-A / TDL-C / CDL-A tables
-(normalized delays × 300 ns DS for indoor-ish scale) as a digital stand-in.
+Default Paper II FR2 protocol still uses 28 GHz. Sub-6 protocols pass below-6 GHz fc.
+Evidence: SYNTHETIC_SIM. Not a calibrated TR 38.901 geometry, not OTA.
 """
 from __future__ import annotations
 
@@ -57,7 +55,12 @@ class TdlCdlBackend:
         powers = [p + (10.0 * np.log10(atten) if atten < 1 else 0.0) for p in spec["power_db"]]
         aoa0 = float(rng.uniform(0.0, np.pi))
         aod0 = float(rng.uniform(0.0, np.pi))
-        H, aoa, aod = superposition_from_paths(rng, delays, powers, n_tx, n_rx, aoa0, aod0, mobility)
+        carrier = proto.get("carrier") or {}
+        fc = float(carrier.get("frequency_hz", 28_000_000_000))
+        band = str(carrier.get("band", "FR2"))
+        H, aoa, aod = superposition_from_paths(
+            rng, delays, powers, n_tx, n_rx, aoa0, aod0, mobility, fc_hz=fc
+        )
         return ChannelDraw(
             H=H,
             aoa=aoa,
@@ -69,8 +72,9 @@ class TdlCdlBackend:
                 "profile": self.profile.upper(),
                 "source": "3GPP TR 38.901 table structure (public)",
                 "delay_spread_ns_digital_scale": DS_NS,
-                "carrier_hz": 28_000_000_000,
-                "band": "FR2",
+                "carrier_hz": fc,
+                "band": band,
+                "family": carrier.get("family", "FR2"),
                 "calibrated_tr38901_geometry": False,
                 "ota": False,
             },
