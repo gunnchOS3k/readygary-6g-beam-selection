@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gunnchos.local/readygary/band-profile.schema.json",
+  "title": "ReadyGary NR band profile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "band_id",
+    "family",
+    "fr_designation",
+    "below_6ghz",
+    "fc_hz",
+    "range_hz",
+    "duplex",
+    "scs_khz",
+    "bandwidth_hz_allowed",
+    "bandwidth_hz_primary",
+    "arfcn",
+    "modem_bom",
+    "regional_note",
+    "evidence",
+    "never"
+  ],
+  "properties": {
+    "profile_id": { "type": "string" },
+    "band_id": { "type": "string", "pattern": "^n[0-9]+$" },
+    "family": {
+      "type": "string",
+      "enum": ["SUB6", "FR2", "FR1_NOT_BELOW_6GHZ"]
+    },
+    "fr_designation": { "type": "string", "enum": ["FR1", "FR2"] },
+    "below_6ghz": { "type": "boolean" },
+    "primary_sub6": { "type": "boolean" },
+    "fc_hz": { "type": "integer", "minimum": 1 },
+    "range_hz": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "ul_range_hz": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "dl_range_hz": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "duplex": { "type": "string", "enum": ["TDD", "FDD", "SDL", "SUL"] },
+    "scs_khz": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 1
+    },
+    "scs_khz_primary": { "type": "integer" },
+    "bandwidth_hz_allowed": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 1
+    },
+    "bandwidth_hz_primary": { "type": "integer" },
+    "arfcn": {
+      "type": "object",
+      "required": ["n_ref", "f_ref_hz", "delta_f_global_hz", "citation"],
+      "properties": {
+        "n_ref": { "type": "integer" },
+        "f_ref_hz": { "type": "integer" },
+        "delta_f_global_hz": { "type": "integer" },
+        "citation": { "type": "string" }
+      }
+    },
+    "mimo": { "type": "object" },
+    "modem_bom": { "type": "object" },
+    "regional_note": { "type": "string" },
+    "experiment_family": { "type": "string" },
+    "evidence": { "type": "object" },
+    "never": { "type": "array", "items": { "type": "string" } }
+  }
+}

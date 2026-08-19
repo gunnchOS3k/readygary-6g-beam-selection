@@ -1,0 +1,47 @@
+# FR1 but NOT a true below-6 GHz Sub-6 profile. Not on RM520N-GL.
+# Exists so the firewall can prove "not every FR1 frequency is below 6 GHz".
+profile_id: n96_unlicensed_fr1
+band_id: n96
+family: FR1_NOT_BELOW_6GHZ
+fr_designation: FR1
+below_6ghz: false
+primary_sub6: false
+fc_hz: 6525000000
+range_hz: [5925000000, 7125000000]
+duplex: TDD
+scs_khz: [15, 30]
+scs_khz_primary: 30
+bandwidth_hz_allowed: [20000000, 40000000, 60000000, 80000000, 100000000]
+bandwidth_hz_primary: 100000000
+arfcn:
+  n_ref: 835000
+  f_ref_hz: 6525000000
+  delta_f_global_hz: 15000
+  f_ref_offs_hz: 3000000000
+  n_ref_offs: 600000
+  citation: 3GPP TS 38.104 Table 5.4.2.1-1; 3GPP TS 38.101-1 n96 5925-7125 MHz
+mimo:
+  dl: "not on gunnchOS BOM"
+  ul: "not on gunnchOS BOM"
+modem_bom:
+  mpn: RM520N-GL
+  supported: false
+  source: Quectel RM520N Series Specification V1.4 band list does not include n96
+  hardware_repo: gunnchos-hardware-industrial-design MODEM_ARCHITECTURE_FREEZE.md
+  not_6g: true
+  not_ntn: true
+  not_fr2: true
+regional_note: >
+  n96 is FR1 and spans 5.925-7.125 GHz, so part of the band is above 6 GHz.
+  It is excluded from the SUB6 experiment family. Do not invent RM520N-GL support.
+experiment_family: EXCLUDED
+evidence:
+  class: IMPLEMENTED_TODAY
+  radio_measurement: none
+  citations:
+    - 3GPP TS 38.101-1 n96
+    - Quectel RM520N Series Specification V1.4 (band absent)
+never:
+  - calling n96 Sub-6
+  - using this profile as the primary Sub-6 arm
+  - inventing modem support

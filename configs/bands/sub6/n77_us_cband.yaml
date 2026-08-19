@@ -1,0 +1,50 @@
+# Primary true-below-6 GHz NR profile.
+# 3GPP TS 38.101-1 n77 is FR1. 3.75 GHz is below 6 GHz. 28 GHz is never this profile.
+profile_id: n77_us_cband
+band_id: n77
+family: SUB6
+fr_designation: FR1
+below_6ghz: true
+primary_sub6: true
+fc_hz: 3750000000
+range_hz: [3300000000, 4200000000]
+duplex: TDD
+scs_khz: [15, 30]
+scs_khz_primary: 30
+bandwidth_hz_allowed: [10000000, 15000000, 20000000, 25000000, 30000000, 40000000, 50000000, 60000000, 70000000, 80000000, 90000000, 100000000]
+bandwidth_hz_primary: 100000000
+arfcn:
+  n_ref: 650000
+  f_ref_hz: 3750000000
+  delta_f_global_hz: 15000
+  f_ref_offs_hz: 3000000000
+  n_ref_offs: 600000
+  citation: 3GPP TS 38.104 Table 5.4.2.1-1 (FR1 3000-24250 MHz raster)
+mimo:
+  dl: "4x4"
+  ul: "2x2"
+  note: Quectel RM520N-GL lists DL 4x4 MIMO on n77; not an analog FR2 codebook
+modem_bom:
+  mpn: RM520N-GL
+  supported: true
+  source: Quectel RM520N Series 5G Specification V1.4 public band list
+  hardware_repo: gunnchos-hardware-industrial-design MODEM_ARCHITECTURE_FREEZE.md
+  not_6g: true
+  not_ntn: true
+  not_fr2: true
+regional_note: >
+  US C-band 3700-3980 MHz is the mid-band 5G layer used as the Gary, IN
+  research scenario. Not a measured drive test. Verizon/AT&T-class C-band
+  relevance; RM520N-GL includes n77.
+experiment_family: SUB6
+evidence:
+  class: IMPLEMENTED_TODAY
+  radio_measurement: SYNTHETIC_SIM
+  citations:
+    - 3GPP TS 38.101-1 (NR UE radio transmission and reception; FR1 operating bands)
+    - 3GPP TS 38.104 (NR base station radio; NR-ARFCN)
+    - Quectel RM520N Series Specification V1.4
+never:
+  - 28 GHz as Sub-6
+  - FR2 relabel
+  - fabricated OTA

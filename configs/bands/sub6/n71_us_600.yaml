@@ -1,0 +1,51 @@
+# True below-6 GHz coverage profile. T-Mobile 600 MHz US / Gary relevance.
+profile_id: n71_us_600
+band_id: n71
+family: SUB6
+fr_designation: FR1
+below_6ghz: true
+primary_sub6: false
+fc_hz: 680500000
+range_hz: [617000000, 698000000]
+dl_range_hz: [617000000, 652000000]
+ul_range_hz: [663000000, 698000000]
+duplex: FDD
+scs_khz: [15]
+scs_khz_primary: 15
+bandwidth_hz_allowed: [5000000, 10000000, 15000000, 20000000]
+bandwidth_hz_primary: 20000000
+arfcn:
+  n_ref: 136100
+  f_ref_hz: 680500000
+  delta_f_global_hz: 5000
+  f_ref_offs_hz: 0
+  n_ref_offs: 0
+  citation: 3GPP TS 38.104 Table 5.4.2.1-1 (FR1 0-3000 MHz, 5 kHz raster); fc is FDD mid-point of UL+DL span used as a digital carrier label
+  dl_n_ref: 126900
+  dl_f_ref_hz: 634500000
+mimo:
+  dl: "2x2"
+  ul: "1x2"
+  note: n71 is coverage/FDD; RM520N-GL includes n71; 4x4 MIMO list from Quectel does not include n71
+modem_bom:
+  mpn: RM520N-GL
+  supported: true
+  source: Quectel RM520N Series 5G Specification V1.4 public band list
+  hardware_repo: gunnchos-hardware-industrial-design MODEM_ARCHITECTURE_FREEZE.md
+  not_6g: true
+  not_ntn: true
+  not_fr2: true
+regional_note: >
+  US n71 600 MHz (T-Mobile coverage layer). Gary, IN research scenario, not
+  measured. True below 6 GHz. Better penetration than n77/n41 in the digital model.
+experiment_family: SUB6
+evidence:
+  class: IMPLEMENTED_TODAY
+  radio_measurement: SYNTHETIC_SIM
+  citations:
+    - 3GPP TS 38.101-1 n71 FDD 617-652 / 663-698 MHz
+    - 3GPP TS 38.104 NR-ARFCN
+    - Quectel RM520N Series Specification V1.4
+never:
+  - 28 GHz as Sub-6
+  - FR2 relabel
