@@ -1,0 +1,112 @@
+{
+  "schema": "gunnchos.surfacekit.v2",
+  "measured_topology": false,
+  "diagram_note": "Reading aid built from repository headings. It is not a measured topology and it is not a live system.",
+  "nodes": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "status-levels-honest",
+      "label": "Status levels (honest)"
+    },
+    {
+      "id": "what-is-readygary",
+      "label": "\ud83d\udd2c **What is ReadyGary?**"
+    },
+    {
+      "id": "what-is-this",
+      "label": "What is this?"
+    }
+  ],
+  "rows": [
+    {
+      "source": "README.md",
+      "scenario_id": "Overview",
+      "site_id": "7GC",
+      "ethical_framing": "# \ud83d\udce1 ReadyGary \u2014 6G Beam Selection"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "Status levels (honest)",
+      "site_id": "7GC",
+      "ethical_framing": "28 GHz is **FR2 mmWave** (3GPP TS 38.101-2), **never Sub-6**. Twin/sim \u2260 OTA. `<1 ms` inference is a **TARGET**, not a measured fact. Primary **true below-6 GHz** profile is **n77 3.75 GHz FR1** (Quectel RM520N-GL BOM, US C-band / Gary scenario). FR2 28 GHz remains a separate experiment family. Not every FR1 band is below 6 GHz (n96 is documented as excluded). Reproduce: `make reproduce` \u00b7 `make sub6-reproduce` \u00b7 `ma"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "\ud83d\udd2c **What is ReadyGary?**",
+      "site_id": "7GC",
+      "ethical_framing": "ReadyGary is a **research project** studying the critical beam selection problem in 5G/6G mmWave networks. By combining physics-based baselines with learned ML models, we **target** fast inference (measured proof pending \u2014 see evidence matrix) for real-time beam tracking under mobility and blockage. **\ud83c\udf93 Based on ECE-6023 Final Project** with comprehensive improvements addressing professor feedback on realistic channe"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "What is this?",
+      "site_id": "7GC",
+      "ethical_framing": "**Study fast, fair beam selection for mmWave/6G using reproducible baselines and ML\u2014honest about what is measured vs simulated.**"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "What problem does this solve?",
+      "site_id": "7GC",
+      "ethical_framing": "**Human:** Dropped links and poor video calls when beams point the wrong way in dense or mobile environments. **Technical:** Beam selection under mobility/blockage with rigorous baselines\u2014not marketing claims without latency proof. **Who is harmed if unsolved:** Users on mmWave at the cell edge; researchers who need reproducible PHY evidence. **Gary / 7GC / digital equality:** This repo supports equitable connectivit"
+    },
+    {
+      "source": "README.md",
+      "scenario_id": "Beginner mental model",
+      "site_id": "7GC",
+      "ethical_framing": "A **flashlight that must aim at a moving person** before the room layout changes\u2014beam tracking under mobility and blockage."
+    }
+  ],
+  "sources": [],
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "body": "# \ud83d\udce1 ReadyGary \u2014 6G Beam Selection"
+    },
+    {
+      "id": "status-levels-honest",
+      "title": "Status levels (honest)",
+      "body": "28 GHz is **FR2 mmWave** (3GPP TS 38.101-2), **never Sub-6**. Twin/sim \u2260 OTA. `<1 ms` inference is a **TARGET**, not a measured fact. Primary **true below-6 GHz** profile is **n77 3.75 GHz FR1** (Quectel RM520N-GL BOM, US C-band / Gary scenario). FR2 28 GHz remains a separate experiment family. Not every FR1 band is below 6 GHz (n96 is documented as excluded). Reproduce: `make reproduce` \u00b7 `make sub6-reproduce` \u00b7 `ma"
+    },
+    {
+      "id": "what-is-readygary",
+      "title": "\ud83d\udd2c **What is ReadyGary?**",
+      "body": "ReadyGary is a **research project** studying the critical beam selection problem in 5G/6G mmWave networks. By combining physics-based baselines with learned ML models, we **target** fast inference (measured proof pending \u2014 see evidence matrix) for real-time beam tracking under mobility and blockage. **\ud83c\udf93 Based on ECE-6023 Final Project** with comprehensive improvements addressing professor feedback on realistic channe"
+    },
+    {
+      "id": "what-is-this",
+      "title": "What is this?",
+      "body": "**Study fast, fair beam selection for mmWave/6G using reproducible baselines and ML\u2014honest about what is measured vs simulated.**"
+    },
+    {
+      "id": "what-problem-does-this-solve",
+      "title": "What problem does this solve?",
+      "body": "**Human:** Dropped links and poor video calls when beams point the wrong way in dense or mobile environments. **Technical:** Beam selection under mobility/blockage with rigorous baselines\u2014not marketing claims without latency proof. **Who is harmed if unsolved:** Users on mmWave at the cell edge; researchers who need reproducible PHY evidence. **Gary / 7GC / digital equality:** This repo supports equitable connectivit"
+    },
+    {
+      "id": "beginner-mental-model",
+      "title": "Beginner mental model",
+      "body": "A **flashlight that must aim at a moving person** before the room layout changes\u2014beam tracking under mobility and blockage."
+    }
+  ],
+  "artifacts": [
+    "results/benchmark_summary.json",
+    "results/benchmark_summary.md",
+    "results/benchmark_table.md",
+    "results/campus_radio/gary_radio_profile_report.md",
+    "results/campus_radio/gaza_radio_profile_report.md",
+    "results/campus_radio/geelong_radio_profile_report.md",
+    "results/campus_radio/germany_radio_profile_report.md",
+    "results/campus_radio/ghana_radio_profile_report.md",
+    "results/campus_radio/graham_land_radio_profile_report.md",
+    "results/campus_radio/guyana_radio_profile_report.md",
+    "results/e2e/README.md",
+    "results/e2e/beam_selection_research_card.md"
+  ],
+  "methods": "# Reproducibility \u2014 readygary-6g-beam-selection RQ2 beam-selection artifact. **Synthetic / host-process only.** Not Oulu affiliation. Not measured FR2 OTA. ## Quickstart (laptop) ```bash git clone https://github.com/gunnchOS3k/readygary-6g-beam-selection.git cd readygary-6g-beam-selection git checkout <frozen-sha> python3 -m venv .venv && source .venv/bin/activate python3 -m pip install pytest numpy pyyaml matplotlib make reproduce ``` `make reproduce` runs `make test`, `make benchmark-toy`, and `make timing`. Full `requirements.txt` pulls torch and plotting stacks; they are **not** required for the toy table or unit tests. ## Canonical commands | Target | What it proves | |--------|--------",
+  "cards": [],
+  "runtime_mode": "PRECOMPUTED",
+  "runtime_boot": false
+}
