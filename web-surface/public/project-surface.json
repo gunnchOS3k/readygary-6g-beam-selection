@@ -1,0 +1,22 @@
+{
+  "repo": "readygary-6g-beam-selection",
+  "productName": "ReadyGary beam selection",
+  "family": "7GC",
+  "classification": "STATIC_RESEARCH_SURFACE_WORKER",
+  "acceptedSha": "e04b38b48cd2ebd87243153ca8fad9e914f16b21",
+  "status": "STAGING_WORKER",
+  "summary": "Research repository for AI-native 6G beam selection. Results stay inside the repository's own evidence.",
+  "capabilities": [
+    "Read the research question and how to find the experiments",
+    "Open the source repository"
+  ],
+  "limitations": [
+    "Not field-validated",
+    "Not carrier-accepted",
+    "Not peer-reviewed by this page"
+  ],
+  "sourceUrl": "https://github.com/gunnchOS3k/readygary-6g-beam-selection",
+  "returnUrlEnv": "GUNNCHOS_PORTAL_URL",
+  "returnUrl": "https://gunnchos-site.gunnchos-finds.workers.dev",
+  "workerName": "gunnchos-readygary"
+}
