@@ -114,5 +114,6 @@
   "methods": "Methods and the toy scores are copied from results/benchmark_summary.json and the train policies in results/experiments/rq2_beam_selection_fr2_summary.json. evidence_class is SYNTHETIC_SIM. sub_ms_inference_proven is false. The benchmark note says these are not calibrated mmWave measurements.",
   "cards": [],
   "runtime_mode": "PRECOMPUTED",
-  "runtime_boot": false
+  "runtime_boot": false,
+  "evidence_class": "SYNTHETIC_SIM"
 }
