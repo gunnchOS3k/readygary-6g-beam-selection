@@ -427,7 +427,10 @@ def run_policy_on_episode(
     return {
         "mean_snr_linear": mean_lin,
         "mean_snr_db": snr_db(mean_lin),
-        "db_loss_vs_oracle": max(0.0, snr_db(mean_or) - snr_db(mean_lin)),
+        # Signed dB gap (oracle mean minus policy mean) on the 28 GHz
+        # SYNTHETIC_SIM path. A negative value is retained; it is not an
+        # improvement claim and not a physical measurement.
+        "db_loss_vs_oracle": snr_db(mean_or) - snr_db(mean_lin),
         "top1_match_oracle": float(top1 / len(slots)),
         "n_beam_switches": float(n_sw),
         "switch_cost": float(n_sw) * switch_pen,
